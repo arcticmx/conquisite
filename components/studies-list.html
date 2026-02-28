@@ -41,34 +41,16 @@
           </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-          <!-- Reuso de cards similares a services -->
-          <div class="group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer h-72">
-            <img alt="Laboratorio Clínico" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClm7jYBMGSFXG4QxilkcEKpbtYfO7gx9FTW85vlq6ap_6QqWFwRUvCzfUFf92Bm2On4uQCsbnr-9MQEYPImTGR7raf6WZEYQf2XT-atUWZQ7HVrFbQYSHYNB_KhYLOr8ATO0QBRfkuMMekVPmSFDcrG1JB8kA9wKpziCf3qztjGzegC3849H6xiU4kyI2GFg9M_10pFxmUyAe28caJuRAQD1KJOmlqJ1RIicwjh3xf6MzJWFUy-cLW26-o9OoPznKKvGjL-PSF_IQ"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
-            <div class="absolute bottom-0 left-0 p-6 w-full">
-              <div class="flex items-center gap-2 mb-2 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"><span class="bg-white/20 backdrop-blur text-white text-xs px-2 py-1 rounded">Biometría, Química Sanguínea...</span></div>
-              <h3 class="text-xl font-bold text-white mb-1 leading-tight">Laboratorio Clínico</h3>
-              <p class="text-slate-200 text-xs line-clamp-2 opacity-80 mb-2">Análisis de alta precisión para un diagnóstico certero.</p>
-              <button class="text-white text-sm font-bold flex items-center gap-1 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-75">Ver 970 estudios <span class="material-icons-outlined text-sm">arrow_forward</span></button>
-            </div>
+        <!-- Dynamic containers: grid/grid and accordion will be populated by JS -->
+          <!-- Mobile accordion list (visible on small screens) -->
+          <div id="studies-list-accordion" class="block md:hidden space-y-3">
+            <!-- items injected by JS for mobile -->
           </div>
 
-          <!-- Repeat other cards (use same visuals as provided) -->
-          <div class="group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer h-72">
-            <img alt="Radiología Digital" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA8RDyTNAr1YkMX-hAhdVrrHj359DtZZJs1e43lGoSgDjFM9AdqeVfcufkRCJY9pugEM1eddj8Wmg0P8zg-hTU3oyfbLezHwGzh1GGAfSk8_JLvzsW7CQGaYsTA8d-T7dg5fqGrbe-WEb-dV69njwRT8CnfhEPBSnm5LTvscLB18EiolgcN8yicHN_w-rU7qgpptOcunN_hbd2muRk4tMUQc3dXnB3WcfDhAB0Q8Ngp62kEV6Doij82keTFzRVOUEL2mFHwzAcC4Y"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
-            <div class="absolute bottom-0 left-0 p-6 w-full">
-              <div class="flex items-center gap-2 mb-2 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"><span class="bg-white/20 backdrop-blur text-white text-xs px-2 py-1 rounded">Tórax, Abdomen, Óseo...</span></div>
-              <h3 class="text-xl font-bold text-white mb-1 leading-tight">Radiología Digital</h3>
-              <p class="text-slate-200 text-xs line-clamp-2 opacity-80 mb-2">Imágenes de alta resolución con mínima radiación.</p>
-              <button class="text-white text-sm font-bold flex items-center gap-1 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-75">Ver 151 estudios <span class="material-icons-outlined text-sm">arrow_forward</span></button>
-            </div>
+          <!-- Grid for md+ (hidden on mobile) -->
+          <div id="studies-list-grid" class="hidden md:grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <!-- items injected by JS for md+ -->
           </div>
-
-          <!-- more cards similar to provided content omitted for brevity (kept in component) -->
-        </div>
-
         <div class="mt-12 flex justify-center">
           <nav class="flex items-center gap-2 bg-white dark:bg-slate-800 p-2 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
             <button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-500"><span class="material-icons-outlined">chevron_left</span></button>

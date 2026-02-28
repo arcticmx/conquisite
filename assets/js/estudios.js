@@ -116,33 +116,85 @@ function renderCategories(){
 }
 
 function renderGrid(){
-  const grid = document.querySelector('.grid');
+  const grid = document.getElementById('studies-list-grid');
+  const accordion = document.getElementById('studies-list-accordion');
   const countEl = document.querySelector('.mb-6 p span.font-bold');
-  if(!grid) return;
+  if(!grid && !accordion) return;
   // compute slice
   const start = (currentPage-1)*STUDIES_PER_PAGE;
   const pageItems = filtered.slice(start, start+STUDIES_PER_PAGE);
-  grid.innerHTML = '';
-  pageItems.forEach(s=>{
-    const card = document.createElement('div');
-    card.className = 'group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer h-72';
-    card.innerHTML = `
-      <img alt="${s.title}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="${s.image}"/>
-      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
-      <div class="absolute bottom-0 left-0 p-6 w-full">
-        <div class="flex items-center gap-2 mb-2 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"><span class="bg-white/20 backdrop-blur text-white text-xs px-2 py-1 rounded">${s.category}</span></div>
-        <h3 class="text-xl font-bold text-white mb-1 leading-tight">${s.title}</h3>
-        <p class="text-slate-200 text-xs line-clamp-2 opacity-80 mb-2">${s.description}</p>
-        <button class="text-white text-sm font-bold flex items-center gap-1 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-75">Ver estudio <span class="material-icons-outlined text-sm">arrow_forward</span></button>
-      </div>
-    `;
-    // navigate to study detail on click
-    card.addEventListener('click', ()=>{ window.location.href = `study-detail.html?id=${encodeURIComponent(s.id)}`; });
-    // make inner button also navigate
-    const btn = card.querySelector('button');
-    if(btn) btn.addEventListener('click', (ev)=>{ ev.stopPropagation(); window.location.href = `study-detail.html?id=${encodeURIComponent(s.id)}`; });
-    grid.appendChild(card);
-  });
+
+  // render grid for md+
+  if(grid){
+    grid.innerHTML = '';
+    pageItems.forEach(s=>{
+      const card = document.createElement('div');
+      card.className = 'group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer h-72';
+      card.innerHTML = `
+        <img alt="${s.title}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="${s.image}"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-6 w-full">
+          <div class="flex items-center gap-2 mb-2 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"><span class="bg-white/20 backdrop-blur text-white text-xs px-2 py-1 rounded">${s.category}</span></div>
+          <h3 class="text-xl font-bold text-white mb-1 leading-tight">${s.title}</h3>
+          <p class="text-slate-200 text-xs line-clamp-2 opacity-80 mb-2">${s.description}</p>
+          <button class="text-white text-sm font-bold flex items-center gap-1 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-75">Ver estudio <span class="material-icons-outlined text-sm">arrow_forward</span></button>
+        </div>
+      `;
+      // navigate to study detail on click
+      card.addEventListener('click', ()=>{ window.location.href = `study-detail.html?id=${encodeURIComponent(s.id)}`; });
+      // make inner button also navigate
+      const btn = card.querySelector('button');
+      if(btn) btn.addEventListener('click', (ev)=>{ ev.stopPropagation(); window.location.href = `study-detail.html?id=${encodeURIComponent(s.id)}`; });
+      grid.appendChild(card);
+    });
+  }
+
+  // render accordion for mobile
+  if(accordion){
+    accordion.innerHTML = '';
+    pageItems.forEach(s=>{
+      const item = document.createElement('div');
+      item.className = 'bg-white dark:bg-slate-800 rounded-xl shadow-sm overflow-hidden';
+      item.innerHTML = `
+        <div class="flex items-center justify-between p-3">
+          <div class="flex items-center gap-3">
+            <img src="${s.image}" alt="${s.title}" class="w-12 h-12 rounded-md object-cover"/>
+            <div>
+              <div class="text-sm font-medium text-slate-800 dark:text-white">${s.title}</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400">${s.category}</div>
+            </div>
+          </div>
+          <button class="accordion-toggle p-2 rounded-md text-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700/50" aria-expanded="false"><span class="material-icons-outlined">expand_more</span></button>
+        </div>
+        <div class="accordion-panel hidden p-4 border-t border-slate-100 dark:border-slate-700">
+          <p class="text-sm text-slate-600 dark:text-slate-300 line-clamp-4">${s.description}</p>
+          <div class="mt-3 flex justify-end">
+            <button class="view-study text-primary font-bold">Ver estudio</button>
+          </div>
+        </div>
+      `;
+      const toggle = item.querySelector('.accordion-toggle');
+      const panel = item.querySelector('.accordion-panel');
+      const viewBtn = item.querySelector('.view-study');
+      // header click toggles except when clicking view button
+      const header = item.firstElementChild;
+      header.addEventListener('click', (ev)=>{
+        if(ev.target.closest('.view-study')) return;
+        if(ev.target.closest('.accordion-toggle')){ toggle.click(); return; }
+        toggle.click();
+      });
+      toggle.addEventListener('click', (ev)=>{
+        ev.stopPropagation();
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', (!expanded).toString());
+        if(expanded){ panel.classList.add('hidden'); toggle.querySelector('.material-icons-outlined').textContent = 'expand_more'; }
+        else { panel.classList.remove('hidden'); toggle.querySelector('.material-icons-outlined').textContent = 'expand_less'; }
+      });
+      if(viewBtn) viewBtn.addEventListener('click', (ev)=>{ ev.stopPropagation(); window.location.href = `study-detail.html?id=${encodeURIComponent(s.id)}`; });
+      accordion.appendChild(item);
+    });
+  }
+
   if(countEl) countEl.textContent = filtered.length;
   renderPagination();
 }

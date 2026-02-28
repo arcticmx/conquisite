@@ -5,28 +5,28 @@
       "title": "Biometría Hemática",
       "category": "Laboratorio Clínico",
       "description": "Panel básico de células sanguíneas.",
-      "image": "https://images.unsplash.com/photo-1581091012184-7d8f4d7e2f6b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1",
+      "image": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=5",
       "full_description": "La biometría hemática evalúa los elementos formes de la sangre, incluyendo glóbulos rojos, blancos y plaquetas. Es útil para detectar anemia, infecciones y trastornos hematológicos.",
       "preparation": ["No requiere ayuno", "Informar si toma anticoagulantes"],
       "duration": "10 min aprox.",
       "price": 250,
       "results": "24 horas",
       "locations": [{"name": "Sucursal Central", "address": "Av. Reforma 222, CDMX"}],
-      "images": ["https://images.unsplash.com/photo-1581091012184-7d8f4d7e2f6b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1"]
+      "images": ["https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=5"]
     },
     {
       "id": 2,
       "title": "Química Sanguínea Completa",
       "category": "Laboratorio Clínico",
       "description": "Glucosa, lípidos, electrolitos y más.",
-      "image": "https://images.unsplash.com/photo-1542367597-41b9b1a9d1b9?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=2",
+      "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=5",
       "full_description": "Panel de química sanguínea para evaluar metabolismo, función renal y perfil lipídico. Incluye mediciones de glucosa, urea, creatinina y lípidos.",
       "preparation": ["Ayuno 8-12 horas recomendado", "Evitar ejercicio intenso previo"],
       "duration": "15 min aprox.",
       "price": 450,
       "results": "24-48 horas",
       "locations": [{"name": "Sucursal Central", "address": "Av. Reforma 222, CDMX"}, {"name": "Sucursal Sur", "address": "Periférico Sur 4500, CDMX"}],
-      "images": ["https://images.unsplash.com/photo-1542367597-41b9b1a9d1b9?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=2"]
+      "images": ["https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=5"]
     },
     {
       "id": 3,
@@ -47,28 +47,28 @@
       "title": "Tomografía Computarizada (TC)",
       "category": "Radiología e Imagen",
       "description": "Exploración rápida y detallada de órganos.",
-      "image": "https://images.unsplash.com/photo-1543163521-1bf41f95b9e0?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=3",
+      "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=5",
       "full_description": "La TC utiliza rayos X para generar imágenes detalladas en cortes transversales del cuerpo. Es ideal para evaluar traumatismos, lesiones internas y algunas patologías abdominales y torácicas.",
       "preparation": ["Puede requerir medio de contraste", "Informar alergias a contraste"],
       "duration": "20 min aprox.",
       "price": 1200,
       "results": "48 horas",
       "locations": [{"name": "Sucursal Central", "address": "Av. Reforma 222, CDMX"}],
-      "images": ["https://images.unsplash.com/photo-1543163521-1bf41f95b9e0?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=3"]
+      "images": ["https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=5"]
     },
     {
       "id": 5,
       "title": "Ecocardiograma",
       "category": "Cardiología",
       "description": "Evaluación funcional del corazón.",
-      "image": "https://images.unsplash.com/photo-1584467735870-3c9a9b1e3b3a?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=4",
+      "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=5",
       "full_description": "El ecocardiograma utiliza ultrasonido para evaluar la estructura y función del corazón, válvulas y flujo sanguíneo. Es útil en cardiopatías y vigilancia cardíaca.",
       "preparation": ["No requiere ayuno", "Evitar ropa ajustada en el tórax"],
       "duration": "30 min aprox.",
       "price": 950,
       "results": "48 horas",
       "locations": [{"name": "Sucursal Central", "address": "Av. Reforma 222, CDMX"}],
-      "images": ["https://images.unsplash.com/photo-1584467735870-3c9a9b1e3b3a?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=4"]
+      "images": ["https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=5"]
     },
     {
       "id": 6,
@@ -89,14 +89,14 @@
       "title": "Papanicolaou",
       "category": "Ginecología",
       "description": "Tamizaje para detección de cambios celulares.",
-      "image": "https://images.unsplash.com/photo-1576765607924-8d4b2b1c2aab?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=6",
+      "image": "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=7",
       "full_description": "El Papanicolaou es una prueba para detectar cambios celulares en el cuello uterino que pueden indicar infección, inflamación o lesión precancerosa.",
       "preparation": ["No tener relaciones sexuales 48 horas antes", "No usar duchas vaginales ni óvulos 48 horas antes"],
       "duration": "10-15 min aprox.",
       "price": 350,
       "results": "72 horas",
       "locations": [{"name": "Sucursal Central", "address": "Av. Reforma 222, CDMX"}],
-      "images": ["https://images.unsplash.com/photo-1576765607924-8d4b2b1c2aab?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=6"]
+      "images": ["https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=7"]
     },
     {
       "id": 8,
@@ -131,14 +131,14 @@
       "title": "Prueba de Orina",
       "category": "Laboratorio Clínico",
       "description": "Análisis completo de orina.",
-      "image": "https://images.unsplash.com/photo-1580281657521-7b3f3f8f5b6e?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=9",
+      "image": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=8",
       "full_description": "Análisis general de orina para detección de infecciones, presencia de glucosa, proteínas o sangre.",
       "preparation": ["Recolectar primera orina de la mañana si es posible", "Seguir instrucciones de higiene proporcionadas"],
       "duration": "5-10 min aprox.",
       "price": 200,
       "results": "24 horas",
       "locations": [{"name": "Sucursal Central", "address": "Av. Reforma 222, CDMX"}],
-      "images": ["https://images.unsplash.com/photo-1580281657521-7b3f3f8f5b6e?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=9"]
+      "images": ["https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=8"]
     },
     {
       "id": 11,
@@ -159,28 +159,28 @@
       "title": "Pruebas de Tiroides",
       "category": "Laboratorio Clínico",
       "description": "TSH, T3 y T4 para función tiroidea.",
-      "image": "https://images.unsplash.com/photo-1580281657519-5f2a1b9b1b6b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=11",
+      "image": "https://images.unsplash.com/photo-1549576490-b0b4831ef60a?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=10",
       "full_description": "Determinación de hormonas tiroideas para evaluar la función de la glándula tiroides y diagnosticar hipotiroidismo o hipertiroidismo.",
       "preparation": ["Ayuno no necesario normalmente", "Informar medicamentos que afectan tiroides"],
       "duration": "10 min aprox.",
       "price": 400,
       "results": "24-48 horas",
       "locations": [{"name": "Sucursal Central", "address": "Av. Reforma 222, CDMX"}],
-      "images": ["https://images.unsplash.com/photo-1580281657519-5f2a1b9b1b6b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=11"]
+      "images": ["https://images.unsplash.com/photo-1549576490-b0b4831ef60a?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=10"]
     },
     {
       "id": 13,
       "title": "Colposcopia",
       "category": "Ginecología",
       "description": "Evaluación detallada del cuello uterino.",
-      "image": "https://images.unsplash.com/photo-1584438784868-6f0fa1b3b2b9?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=12",
+      "image": "https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=13",
       "full_description": "La colposcopia permite la inspección directa del cuello uterino para detectar lesiones o áreas sospechosas que requieren biopsia.",
       "preparation": ["No tener relaciones sexuales 48 horas antes", "Evitar duchas vaginales y óvulos 48 horas antes"],
       "duration": "20-30 min aprox.",
       "price": 900,
       "results": "72 horas",
       "locations": [{"name": "Sucursal Central", "address": "Av. Reforma 222, CDMX"}],
-      "images": ["https://images.unsplash.com/photo-1584438784868-6f0fa1b3b2b9?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=12"]
+      "images": ["https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=13"]
     },
     {
       "id": 14,
@@ -201,42 +201,42 @@
       "title": "Marcadores Tumorales",
       "category": "Laboratorio Clínico",
       "description": "Paneles especializados para diagnóstico y seguimiento.",
-      "image": "https://images.unsplash.com/photo-1582719478202-0b2f9a7a7c7f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=14",
+      "image": "https://images.unsplash.com/photo-1550831107-1553da8c8464?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=17",
       "full_description": "Determinación de marcadores tumorales específicos según indicación clínica para apoyo en diagnóstico y seguimiento oncológico.",
       "preparation": ["Ayuno opcional según marcador", "Seguir indicaciones médicas"],
       "duration": "10-20 min aprox.",
       "price": 900,
       "results": "48-72 horas",
       "locations": [{"name": "Sucursal Central", "address": "Av. Reforma 222, CDMX"}],
-      "images": ["https://images.unsplash.com/photo-1582719478202-0b2f9a7a7c7f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=14"]
+      "images": ["https://images.unsplash.com/photo-1550831107-1553da8c8464?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=17"]
     },
     {
       "id": 16,
       "title": "ECG Holter 24h",
       "category": "Cardiología",
       "description": "Monitor cardíaco ambulatorio por 24 horas.",
-      "image": "https://images.unsplash.com/photo-1582719478210-1c3f9b7b8d8f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=15",
+      "image": "https://images.unsplash.com/photo-1550831107-1553da8c8464?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=17",
       "full_description": "Registro electrocardiográfico continuo durante 24 horas para detectar arritmias aisladas o relacionadas con síntomas.",
       "preparation": ["Mantener actividad habitual durante el registro", "No mojar los electrodos"],
       "duration": "24 horas",
       "price": 1500,
       "results": "48-72 horas",
       "locations": [{"name": "Sucursal Central", "address": "Av. Reforma 222, CDMX"}],
-      "images": ["https://images.unsplash.com/photo-1582719478210-1c3f9b7b8d8f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=15"]
+      "images": ["https://images.unsplash.com/photo-1550831107-1553da8c8464?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=17"]
     },
     {
       "id": 17,
       "title": "Resonancia Abdominal",
       "category": "Radiología e Imagen",
       "description": "Imágenes específicas del abdomen.",
-      "image": "https://images.unsplash.com/photo-1582719478215-2d4f9c8c9e9f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=16",
+      "image": "https://images.unsplash.com/photo-1550831107-1553da8c8464?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=17",
       "full_description": "Resonancia magnética abdominal para evaluación de hígado, páncreas y órganos intraabdominales sin radiación.",
       "preparation": ["Ayuno si se solicita contraste", "Retirar objetos metálicos"],
       "duration": "40-50 min aprox.",
       "price": 3000,
       "results": "24-48 horas",
       "locations": [{"name": "Sucursal Central", "address": "Av. Reforma 222, CDMX"}],
-      "images": ["https://images.unsplash.com/photo-1582719478215-2d4f9c8c9e9f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=16"]
+      "images": ["https://images.unsplash.com/photo-1550831107-1553da8c8464?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=17"]
     },
     {
       "id": 18,

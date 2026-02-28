@@ -12,9 +12,9 @@
     </div>
   </div>
 </div>
-<nav class="sticky top-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur shadow-sm border-b border-slate-100 dark:border-slate-800">
+<nav id="top-nav" class="sticky top-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur shadow-sm border-b border-slate-100 dark:border-slate-800">
   <div class="container px-4 py-3 flex justify-between items-center">
-    <a class="flex items-center gap-2 group" href="index.html">
+    <a id="brand" class="flex items-center gap-2 group" href="index.html">
       <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-primary rounded-full flex items-center justify-center text-white font-bold text-xl group-hover:scale-105 transition-transform">Q</div>
       <div class="flex flex-col leading-tight">
         <span class="font-bold text-xl text-primary dark:text-white tracking-tight">CONQUI</span>
@@ -24,38 +24,104 @@
     <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 dark:text-slate-300">
       <span class="material-icons-outlined text-3xl">menu</span>
     </button>
-    <div id="mobile-menu" class="md:hidden hidden w-full">
+    <div id="mobile-menu" class="md:hidden w-full h-screen fixed top-0 right-0 bg-white dark:bg-slate-900 shadow-lg transform translate-x-full transition-transform z-50">
       <div class="px-4 py-3 border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
-        <div class="flex flex-col gap-2">
-          <a class="block px-3 py-2 rounded-md hover:bg-slate-50 dark:hover:bg-slate-800" href="index.html">Inicio</a>
-          <a class="block px-3 py-2 rounded-md hover:bg-slate-50 dark:hover:bg-slate-800" href="estudios.html">Estudios</a>
-          <a class="block px-3 py-2 rounded-md hover:bg-slate-50 dark:hover:bg-slate-800" href="paquetes.html">Paquetes</a>
-          <a class="block px-3 py-2 rounded-md hover:bg-slate-50 dark:hover:bg-slate-800" href="nosotros.html">Nosotros</a>
-          <a class="block px-3 py-2 rounded-md hover:bg-slate-50 dark:hover:bg-slate-800" href="contacto.html">Contacto</a>
-          <a class="mt-2 inline-block bg-secondary hover:bg-red-600 text-white px-4 py-2 rounded-full font-bold shadow-lg text-center" href="#">Consulta tus resultados</a>
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-3">
+          </div>
+          <button id="mobile-menu-close" class="p-2 text-slate-600 dark:text-slate-300">
+            <span class="material-icons-outlined text-2xl">close</span>
+          </button>
         </div>
+        <nav id="mobile-nav-list" class="flex flex-col gap-4 text-lg" aria-label="Mobile navigation">
+          <!-- populated from desktop nav -->
+        </nav>
       </div>
     </div>
-    <div class="hidden md:flex items-center gap-8 font-medium text-slate-600 dark:text-slate-300 text-sm">
+    <div id="desktop-nav-links" class="hidden md:flex items-center gap-8 font-medium text-slate-600 dark:text-slate-300 text-sm">
       <a class="hover:text-primary dark:hover:text-white transition-colors" href="index.html">Inicio</a>
       <a class="hover:text-primary dark:hover:text-white transition-colors flex items-center gap-1" href="estudios.html">Estudios</a>
       <a class="hover:text-primary dark:hover:text-white transition-colors flex items-center gap-1" href="paquetes.html">Paquetes</a>
       <a class="hover:text-primary dark:hover:text-white transition-colors" href="nosotros.html">Nosotros</a>
       <a class="hover:text-primary dark:hover:text-white transition-colors" href="contacto.html">Contacto</a>
-      <a class="bg-secondary hover:bg-red-600 text-white px-5 py-2.5 rounded-full font-bold shadow-lg shadow-red-500/30 transition-all hover:-translate-y-0.5" href="#">
-        Consulta tus resultados
-      </a>
     </div>
   </div>
+
 
 </nav>
 
 <script>
   (function(){
+    // Build mobile nav from desktop links and handle toggle/navigation
+    function buildMobile(){
+      const desktop = document.getElementById('desktop-nav-links');
+      const mobileList = document.getElementById('mobile-nav-list');
+      const menu = document.getElementById('mobile-menu');
+      if(!desktop || !mobileList || !menu) return;
+      mobileList.innerHTML = '';
+        desktop.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href') || '#';
+        const text = (a.textContent || '').trim();
+        const item = document.createElement('a');
+        item.href = href;
+        item.className = 'block px-3 py-2 rounded-md hover:bg-slate-50 dark:hover:bg-slate-800';
+        item.textContent = text;
+        item.addEventListener('click', function(ev){
+          const navEl = document.getElementById('top-nav'); if(navEl) navEl.classList.remove('mobile-open');
+          document.documentElement.style.overflow = '';
+          if(href && href !== '#' && !href.startsWith('http')){
+            ev.preventDefault();
+            setTimeout(()=> location.href = href, 80);
+          }
+        });
+        mobileList.appendChild(item);
+      });
+      
+    }
+
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
     if(!btn || !menu) return;
-    btn.addEventListener('click', ()=> menu.classList.toggle('hidden'));
-    menu.querySelectorAll('a[href]').forEach(a=> a.addEventListener('click', ()=>{ menu.classList.add('hidden'); if(typeof activateNavLinks==='function') activateNavLinks(); }));
+    btn.style.cursor = 'pointer';
+
+    // toggle mobile-open class on the top nav to show/hide drawer
+    const navEl = document.getElementById('top-nav');
+    btn.addEventListener('click', ()=>{
+      if(navEl) navEl.classList.toggle('mobile-open');
+      // prevent body scroll when open
+      if(navEl && navEl.classList.contains('mobile-open')) document.documentElement.style.overflow = 'hidden';
+      else document.documentElement.style.overflow = '';
+    });
+
+    // close button inside drawer
+    const closeBtn = document.getElementById('mobile-menu-close');
+    if(closeBtn){
+      closeBtn.addEventListener('click', ()=>{
+        if(navEl) navEl.classList.remove('mobile-open');
+        document.documentElement.style.overflow = '';
+      });
+    }
+
+    // initial build and keep in sync
+    buildMobile();
+    const desktop = document.getElementById('desktop-nav-links');
+    if(desktop && window.MutationObserver){
+      const obs = new MutationObserver(buildMobile);
+      obs.observe(desktop, {childList:true, subtree:true});
+    }
   })();
 </script>
+
+<style>
+  /* right-side drawer styles */
+  #mobile-menu{ position: fixed; top: 0; right: 0; height: 100vh; width: 320px; max-width: 80vw; transform: translateX(100%); transition: transform .28s ease; z-index: 65; box-shadow: -20px 0 40px rgba(2,6,23,0.12); }
+  #top-nav.mobile-open #mobile-menu{ transform: translateX(0); }
+  /* style links like reference */
+  #mobile-nav-list a{ color: #1e3a8a; font-weight:700; display:block; padding-left: 0.75rem; padding-right:0.75rem; }
+  #mobile-nav-list a:hover{ background: rgba(30,58,138,0.03); }
+  /* CTA */
+  #mobile-nav-list .cta-full{ display:block; width:100%; text-align:center; margin-top:1rem; }
+  .mobile-cta-btn{ background:#ef4444; color:white; padding:12px 20px; border-radius:9999px; display:inline-block; box-shadow:0 10px 25px rgba(239,68,68,0.25); font-weight:700 }
+  /* keep brand and hamburger visible behind drawer (as in reference) */
+  #top-nav .container { position: relative; z-index: 70; }
+</style>

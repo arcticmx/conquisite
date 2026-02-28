@@ -25,12 +25,16 @@ async function init(){
 
   // Activate nav links after header has been injected
   // Ensure nav helper is loaded and activate nav
-  if(!window.activateNavLinks){
+  // Ensure navigation helper and mobile menu script are present.
+  if(!window.activateNavLinks || !window.setupMobileMenu){
     const s = document.createElement('script'); s.src = 'assets/js/nav.js'; s.async = true; document.body.appendChild(s);
-    // wait briefly for the helper to initialize
-    await new Promise(r=>setTimeout(r,100));
+    for(let i=0;i<50 && !(window.activateNavLinks && window.setupMobileMenu);i++){ await new Promise(r=>setTimeout(r,50)); }
   }
   if(typeof activateNavLinks === 'function') activateNavLinks();
+  if(typeof window.setupMobileMenu === 'function'){
+    try{ window.setupMobileMenu(); }catch(e){ console.warn('setupMobileMenu failed', e); }
+  }
+  // end nav init
 }
 
 // --- Studies dynamic rendering (search, categories, pagination) ---

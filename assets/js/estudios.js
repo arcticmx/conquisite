@@ -105,6 +105,11 @@ function renderGrid(){
         <button class="text-white text-sm font-bold flex items-center gap-1 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-75">Ver estudio <span class="material-icons-outlined text-sm">arrow_forward</span></button>
       </div>
     `;
+    // navigate to study detail on click
+    card.addEventListener('click', ()=>{ window.location.href = `study-detail.html?id=${encodeURIComponent(s.id)}`; });
+    // make inner button also navigate
+    const btn = card.querySelector('button');
+    if(btn) btn.addEventListener('click', (ev)=>{ ev.stopPropagation(); window.location.href = `study-detail.html?id=${encodeURIComponent(s.id)}`; });
     grid.appendChild(card);
   });
   if(countEl) countEl.textContent = filtered.length;

@@ -23,6 +23,10 @@ async function initServices(){
         </div>
       `;
       container.appendChild(card);
+      // navigate to study detail when clicked
+      card.addEventListener('click', ()=>{ window.location.href = `study-detail.html?id=${encodeURIComponent(s.id)}`; });
+      const btn = card.querySelector('button');
+      if(btn) btn.addEventListener('click', (ev)=>{ ev.stopPropagation(); window.location.href = `study-detail.html?id=${encodeURIComponent(s.id)}`; });
     });
   }catch(e){
     console.warn('Failed to load services', e);

@@ -45,6 +45,24 @@ async function init(){
     for(let i=0;i<50 && !window.activateNavLinks;i++){ await new Promise(r=>setTimeout(r,50)); }
   })();
   if(typeof activateNavLinks === 'function') activateNavLinks();
+
+  // Load services renderer if the services placeholder exists
+  if(document.getElementById('component-services') && document.getElementById('services-grid')){
+    if(!window.initServices){
+      const s = document.createElement('script'); s.src = 'assets/js/services.js'; s.async = true; document.body.appendChild(s);
+      for(let i=0;i<50 && !window.initServices;i++){ await new Promise(r=>setTimeout(r,50)); }
+    }
+    if(typeof initServices === 'function') initServices();
+  }
+
+  // Load packages renderer if the packages placeholder exists
+  if(document.getElementById('component-packages') && document.getElementById('packages-grid')){
+    if(!window.initPackages){
+      const s2 = document.createElement('script'); s2.src = 'assets/js/packages.js'; s2.async = true; document.body.appendChild(s2);
+      for(let i=0;i<50 && !window.initPackages;i++){ await new Promise(r=>setTimeout(r,50)); }
+    }
+    if(typeof initPackages === 'function') initPackages();
+  }
 }
 
 function activateNavLinks(){

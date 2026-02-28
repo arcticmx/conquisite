@@ -1,0 +1,44 @@
+{
+  "packages": [
+    {
+      "id": 1,
+      "title": "Biometría Hemática",
+      "category": "Laboratorio Clínico",
+      "description": "Panel básico de células sanguíneas.",
+      "image": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=5",
+      "prep": "Ayuno 8 horas",
+      "price": "450",
+      "duration": "15 min"
+    },
+    {
+      "id": 2,
+      "title": "Química Sanguínea Completa",
+      "category": "Laboratorio Clínico",
+      "description": "Glucosa, lípidos, electrolitos y más.",
+      "image": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=5",
+      "prep": "Ayuno 8 horas",
+      "price": "650",
+      "duration": "20 min"
+    },
+    {
+      "id": 3,
+      "title": "Resonancia Magnética (RM)",
+      "category": "Radiología e Imagen",
+      "description": "Imágenes de alta resolución sin radiación.",
+      "image": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=5",
+      "prep": "Retirar objetos metálicos",
+      "price": "2800",
+      "duration": "45 min"
+    },
+    {
+      "id": 4,
+      "title": "Tomografía Computarizada (TC)",
+      "category": "Radiología e Imagen",
+      "description": "Exploración rápida y detallada de órganos.",
+      "image": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=5",
+      "prep": "Ayuno 4 horas según protocolo",
+      "price": "2200",
+      "duration": "25 min"
+    }
+  ]
+}

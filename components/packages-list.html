@@ -1,0 +1,49 @@
+<section class="py-12 bg-background-light dark:bg-background-dark min-h-screen">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col lg:flex-row gap-8">
+      <aside class="lg:w-1/4">
+        <div class="sticky top-24 space-y-6">
+          <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 p-6">
+            <label class="text-xs font-bold text-secondary uppercase mb-3 block tracking-wider">Buscar Paquete</label>
+            <div class="relative">
+              <input id="package-search" class="w-full pl-10 pr-4 py-2.5 bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg text-sm focus:ring-2 focus:ring-primary focus:border-transparent outline-none dark:text-white transition-all placeholder-slate-400" placeholder="Ej. Chequeo, Preventivo..." type="text"/>
+              <span class="material-icons-outlined absolute left-3 top-2.5 text-slate-400 text-lg">search</span>
+            </div>
+          </div>
+          <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 overflow-hidden">
+            <div class="p-4 border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 flex justify-between items-center">
+              <h3 class="font-bold text-slate-800 dark:text-white">Categorías</h3>
+              <span class="bg-blue-100 dark:bg-blue-900 text-primary dark:text-blue-300 text-xs font-bold px-2 py-0.5 rounded-full">4</span>
+            </div>
+            <div class="p-2">
+              <nav id="package-categories" class="space-y-1" aria-label="Categorías"></nav>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="lg:w-3/4">
+        <div class="mb-6 flex justify-between items-center">
+          <p class="text-sm text-slate-500 dark:text-slate-400">Mostrando <span class="font-bold text-slate-800 dark:text-white">0</span> paquetes</p>
+          <div class="flex items-center gap-2">
+            <label for="package-sort" class="text-xs font-medium text-slate-500 hidden sm:block">Ordenar por:</label>
+            <select id="package-sort" class="form-select text-sm border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 rounded-lg focus:ring-primary focus:border-primary py-1.5 pl-3 pr-8">
+              <option value="relevance">Relevancia</option>
+              <option value="name">Nombre (A-Z)</option>
+              <option value="popular">Más solicitados</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6" id="package-grid">
+          <!-- paquetes renderizados aquí -->
+        </div>
+
+        <div class="mt-12 flex justify-center">
+          <nav id="package-pagination" class="flex items-center gap-2 bg-white dark:bg-slate-800 p-2 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700"></nav>
+        </div>
+
+      </main>
+    </div>
+  </div>
+</section>

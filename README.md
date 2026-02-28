@@ -1,4 +1,4 @@
-**CID - Centro de Imagen (Proyecto)**
+**CONQUI - Centro de Imagen (Proyecto)**
 
 - **Descripción:**: Sitio web corporativo sencillo y componentizado para un centro de imagen y diagnóstico. El proyecto está organizado como páginas estáticas que reutilizan fragmentos HTML (header/footer y secciones) y datos JSON para contenido dinámico (estudios, carrusel).
 

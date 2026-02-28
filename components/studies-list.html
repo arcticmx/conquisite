@@ -13,9 +13,14 @@
           <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 overflow-hidden">
             <div class="p-4 border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 flex justify-between items-center">
               <h3 class="font-bold text-slate-800 dark:text-white">Categorías</h3>
-              <span class="bg-blue-100 dark:bg-blue-900 text-primary dark:text-blue-300 text-xs font-bold px-2 py-0.5 rounded-full">8</span>
+              <div class="flex items-center gap-2">
+                <span class="bg-blue-100 dark:bg-blue-900 text-primary dark:text-blue-300 text-xs font-bold px-2 py-0.5 rounded-full">8</span>
+                <button id="study-categories-toggle" aria-expanded="true" class="block sm:hidden p-2 rounded-md text-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700/50">
+                  <span class="material-icons-outlined">expand_more</span>
+                </button>
+              </div>
             </div>
-            <div class="p-2">
+            <div id="study-categories-panel" class="p-2 block">
               <nav id="study-categories" class="space-y-1" aria-label="Categorías"></nav>
             </div>
           </div>

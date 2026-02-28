@@ -9,7 +9,7 @@ async function initPackages(){
     container.innerHTML = '';
     items.forEach(s =>{
       const card = document.createElement('div');
-      card.className = 'group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer h-80';
+      card.className = 'group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer h-80 min-w-[80%] sm:min-w-[45%] md:min-w-full snap-start';
       card.innerHTML = `
         <img alt="${escapeHtml(s.title)}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="${escapeHtml(s.image)}"/>
         <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>

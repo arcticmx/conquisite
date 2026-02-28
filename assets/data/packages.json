@@ -2,43 +2,136 @@
   "packages": [
     {
       "id": 1,
-      "title": "Biometría Hemática",
-      "category": "Laboratorio Clínico",
-      "description": "Panel básico de células sanguíneas.",
-      "image": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=5",
+      "title": "Check-up Integral Mujer",
+      "category": "Paquete Preventivo",
+      "description": "Evaluación médica completa diseñada específicamente para la salud femenina, enfocada en la detección temprana de las patologías más comunes.",
+      "image": "https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=1200&auto=format&fit=crop",
       "prep": "Ayuno 8 horas",
-      "price": "450",
-      "duration": "15 min"
+      "price": 4850,
+      "regular_price": 6050,
+      "savings_label": "Ahorras $1,200 MXN",
+      "duration": "2 horas aprox.",
+      "results": "48 horas",
+      "full_description": "Evaluación médica completa diseñada específicamente para la salud femenina, enfocada en la detección temprana de las patologías más comunes como diabetes, hipertensión, dislipidemias, osteoporosis y cáncer de mama.",
+      "includes": [
+        { "icon": "hematology", "title": "Biometría Hemática Completa", "description": "Análisis de 24 parámetros sanguíneos." },
+        { "icon": "science", "title": "Química Sanguínea (27 elementos)", "description": "Glucosa, colesterol, triglicéridos, etc." },
+        { "icon": "radiology", "title": "Mastografía Digital", "description": "Detección de lesiones mamarias." },
+        { "icon": "monitor_heart", "title": "Ultrasonido Pélvico", "description": "Evaluación de útero y ovarios." },
+        { "icon": "skeleton", "title": "Densitometría Ósea", "description": "Medición de densidad mineral ósea (Columna y Cadera)." },
+        { "icon": "ecg_heart", "title": "Electrocardiograma", "description": "Registro de la actividad eléctrica del corazón." }
+      ],
+      "benefits": "Este paquete integral está diseñado para proporcionar una visión completa de su estado de salud actual. Permite la detección oportuna de padecimientos silenciosos como la diabetes, hipertensión, dislipidemias, osteoporosis y cáncer de mama.",
+      "benefits_tip": "Prevención Activa: Realizar este estudio anualmente puede aumentar significativamente las probabilidades de un tratamiento exitoso ante cualquier anomalía detectada.",
+      "preparation": [
+        { "icon": "restaurant_menu", "title": "Ayuno Requerido", "description": "Presentarse con un ayuno mínimo de 8 horas y máximo de 12 horas. Puede beber agua simple." },
+        { "icon": "water_drop", "title": "Muestra de Orina", "description": "Se recomienda recolectar la primera orina de la mañana o tener una retención de 2 horas mínimo." },
+        { "icon": "checkroom", "title": "Ropa Cómoda", "description": "Acudir con ropa de dos piezas para facilitar los estudios de imagenología (ultrasonido y mastografía)." }
+      ],
+      "locations": [
+        { "name": "Sucursal Central", "address": "Av. Reforma 222, CDMX", "availability": "Citas hoy disponibles", "available": true },
+        { "name": "Sucursal Sur", "address": "Periférico Sur 4500, CDMX", "availability": "Disponible mañana", "available": true }
+      ]
     },
     {
       "id": 2,
-      "title": "Química Sanguínea Completa",
-      "category": "Laboratorio Clínico",
-      "description": "Glucosa, lípidos, electrolitos y más.",
-      "image": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=5",
+      "title": "Check-up Integral Hombre",
+      "category": "Paquete Preventivo",
+      "description": "Evaluación preventiva enfocada en los principales factores de riesgo masculino: cardíaco, metabólico y urológico.",
+      "image": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1200&auto=format&fit=crop",
       "prep": "Ayuno 8 horas",
-      "price": "650",
-      "duration": "20 min"
+      "price": 4650,
+      "regular_price": 5800,
+      "savings_label": "Ahorras $1,150 MXN",
+      "duration": "2 horas aprox.",
+      "results": "48 horas",
+      "full_description": "Evaluación preventiva masculina integral. Incluye análisis de laboratorio, imagen y estudios cardíacos para detectar a tiempo diabetes, hipertensión, problemas prostáticos y cardiovasculares.",
+      "includes": [
+        { "icon": "hematology", "title": "Biometría Hemática Completa", "description": "Análisis de 24 parámetros sanguíneos." },
+        { "icon": "science", "title": "Química Sanguínea (27 elementos)", "description": "Glucosa, colesterol, triglicéridos, entre otros." },
+        { "icon": "monitor_heart", "title": "Ultrasonido de Próstata", "description": "Evaluación de tamaño y estructura prostática." },
+        { "icon": "ecg_heart", "title": "Electrocardiograma", "description": "Registro de la actividad eléctrica del corazón." },
+        { "icon": "urology", "title": "Antígeno Prostático (PSA)", "description": "Detección temprana de alteraciones prostáticas." },
+        { "icon": "labs", "title": "Perfil de Lípidos", "description": "Evaluación del riesgo cardiovascular." }
+      ],
+      "benefits": "Diseñado para identificar los principales factores de riesgo en hombres mayores de 40 años. La detección temprana de alteraciones metabólicas y prostáticas mejora significativamente el pronóstico.",
+      "benefits_tip": "Prevención Activa: Un chequeo anual puede detectar hasta el 80% de las enfermedades crónicas en etapa temprana, cuando el tratamiento es más efectivo.",
+      "preparation": [
+        { "icon": "restaurant_menu", "title": "Ayuno Requerido", "description": "Presentarse con un ayuno mínimo de 8 horas y máximo de 12 horas. Puede beber agua simple." },
+        { "icon": "water_drop", "title": "Muestra de Orina", "description": "Se recomienda tener retención de orina mínima de 2 horas." },
+        { "icon": "checkroom", "title": "Ropa Cómoda", "description": "Acudir con ropa cómoda y dos piezas para facilitar el ultrasonido." }
+      ],
+      "locations": [
+        { "name": "Sucursal Central", "address": "Av. Reforma 222, CDMX", "availability": "Citas hoy disponibles", "available": true },
+        { "name": "Sucursal Sur", "address": "Periférico Sur 4500, CDMX", "availability": "Disponible mañana", "available": true }
+      ]
     },
     {
       "id": 3,
-      "title": "Resonancia Magnética (RM)",
-      "category": "Radiología e Imagen",
-      "description": "Imágenes de alta resolución sin radiación.",
-      "image": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=5",
-      "prep": "Retirar objetos metálicos",
-      "price": "2800",
-      "duration": "45 min"
+      "title": "Paquete Cardíaco Premium",
+      "category": "Paquete Especializado",
+      "description": "Evaluación cardiológica completa con estudios de imagen avanzados para valorar la salud del corazón.",
+      "image": "https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?q=80&w=1200&auto=format&fit=crop",
+      "prep": "Ropa cómoda",
+      "price": 3200,
+      "regular_price": 4000,
+      "savings_label": "Ahorras $800 MXN",
+      "duration": "3 horas aprox.",
+      "results": "24-48 horas",
+      "full_description": "El paquete cardíaco premium agrupa los estudios más relevantes para evaluar la función y estructura del corazón. Ideal para personas con antecedentes familiares, hipertensión o sospecha de enfermedad coronaria.",
+      "includes": [
+        { "icon": "ecg_heart", "title": "Electrocardiograma en Reposo", "description": "Registro base de la actividad eléctrica cardíaca." },
+        { "icon": "ecg", "title": "Electrocardiograma de Esfuerzo", "description": "Prueba de estrés para detectar isquemia." },
+        { "icon": "cardiology", "title": "Ecocardiograma Doppler", "description": "Evaluación de válvulas, cavidades y función ventricular." },
+        { "icon": "monitor_heart", "title": "Holter 24 horas", "description": "Monitoreo continuo del ritmo cardíaco." },
+        { "icon": "science", "title": "Perfil Cardíaco (Troponinas, BNP)", "description": "Marcadores de daño miocárdico en sangre." },
+        { "icon": "hematology", "title": "Biometría Hemática", "description": "Conteo celular completo." }
+      ],
+      "benefits": "Evalúa de forma integral la salud cardiovascular. Detecta arritmias, insuficiencia cardíaca, cardiopatía isquémica y valvulopatías en etapa temprana.",
+      "benefits_tip": "Detección Temprana: Las enfermedades cardíacas son la principal causa de muerte. Este paquete proporciona información clave para su prevención y manejo oportuno.",
+      "preparation": [
+        { "icon": "restaurant_menu", "title": "Ligero Ayuno", "description": "Para la prueba de esfuerzo se requiere ayuno de 3-4 horas. El resto de estudios no requieren ayuno." },
+        { "icon": "sports", "title": "Ropa Deportiva", "description": "Usar ropa y calzado cómodo para la prueba de esfuerzo en caminadora." },
+        { "icon": "medication", "title": "Medicamentos", "description": "No suspender medicamentos cardíacos sin indicación médica expresa." }
+      ],
+      "locations": [
+        { "name": "Sucursal Central", "address": "Av. Reforma 222, CDMX", "availability": "Citas hoy disponibles", "available": true },
+        { "name": "Sucursal Norte", "address": "Insurgentes Norte 1200, CDMX", "availability": "Disponible esta semana", "available": true }
+      ]
     },
     {
       "id": 4,
-      "title": "Tomografía Computarizada (TC)",
-      "category": "Radiología e Imagen",
-      "description": "Exploración rápida y detallada de órganos.",
-      "image": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=5",
-      "prep": "Ayuno 4 horas según protocolo",
-      "price": "2200",
-      "duration": "25 min"
+      "title": "Paquete Metabólico Avanzado",
+      "category": "Laboratorio Clínico",
+      "description": "Panel completo de estudios de laboratorio para diagnóstico y seguimiento de enfermedades metabólicas crónicas.",
+      "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=1200&auto=format&fit=crop",
+      "prep": "Ayuno 12 horas",
+      "price": 1850,
+      "regular_price": 2400,
+      "savings_label": "Ahorras $550 MXN",
+      "duration": "30 min aprox.",
+      "results": "24 horas",
+      "full_description": "El paquete metabólico avanzado incluye el panel más completo para evaluar y controlar enfermedades como diabetes, hipertensión, dislipidemia y síndrome metabólico.",
+      "includes": [
+        { "icon": "science", "title": "Glucosa en Ayuno + Postprandial", "description": "Control integral de la glucemia." },
+        { "icon": "labs", "title": "Hemoglobina Glucosilada (HbA1c)", "description": "Control metabólico de los últimos 3 meses." },
+        { "icon": "hematology", "title": "Perfil Lipídico Completo", "description": "Colesterol total, HDL, LDL, VLDL y triglicéridos." },
+        { "icon": "science", "title": "Función Renal (BUN, Creatinina, TFG)", "description": "Evaluación del filtrado glomerular." },
+        { "icon": "monitor_heart", "title": "Función Hepática", "description": "TGO, TGP, Fosfatasa alcalina y bilirrubinas." },
+        { "icon": "labs", "title": "Ácido Úrico y Electrolitos", "description": "Sodio, Potasio, Cloro y Ácido Úrico sérico." }
+      ],
+      "benefits": "Indicado para pacientes con diagnóstico o sospecha de diabetes, obesidad, hipertensión o historial familiar de enfermedades metabólicas. Permite ajustar tratamientos y hábitos de manera oportuna.",
+      "benefits_tip": "Seguimiento Efectivo: Realizarlo cada 3-6 meses permite a su médico ajustar el tratamiento con información objetiva y actualizada.",
+      "preparation": [
+        { "icon": "restaurant_menu", "title": "Ayuno Estricto", "description": "Se requiere ayuno mínimo de 12 horas. Puede beber agua simple sin gas." },
+        { "icon": "medication", "title": "Medicamentos", "description": "Consultar con su médico si debe suspender hipoglucemiantes el día del estudio." },
+        { "icon": "sports", "title": "Evitar Ejercicio", "description": "No realizar ejercicio intenso las 24 horas previas para no alterar los resultados." }
+      ],
+      "locations": [
+        { "name": "Sucursal Central", "address": "Av. Reforma 222, CDMX", "availability": "Citas hoy disponibles", "available": true },
+        { "name": "Sucursal Sur", "address": "Periférico Sur 4500, CDMX", "availability": "Disponible mañana", "available": true },
+        { "name": "Sucursal Norte", "address": "Insurgentes Norte 1200, CDMX", "availability": "Disponible esta semana", "available": false }
+      ]
     }
   ]
 }

@@ -28,13 +28,14 @@ async function init(){
   // Resolve data-href links now that header/footer are in the DOM
   rewriteNavHrefs('../../');
 
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.documentElement.classList.add('dark');
-  }
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-    if (event.matches) document.documentElement.classList.add('dark');
-    else document.documentElement.classList.remove('dark');
-  });
+  // Dark mode sync (desactivado — descomentar para re-habilitar)
+  // if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  //   document.documentElement.classList.add('dark');
+  // }
+  // window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+  //   if (event.matches) document.documentElement.classList.add('dark');
+  //   else document.documentElement.classList.remove('dark');
+  // });
 
   // nav.js cargado como script estático — invocar helpers directamente
   if(typeof window.setupMobileMenu === 'function') window.setupMobileMenu();

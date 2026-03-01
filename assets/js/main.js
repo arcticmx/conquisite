@@ -83,14 +83,14 @@ async function init(){
     }catch(e){ console.warn('ensureMobileMenu error', e); }
   })();
 
-  // Simple dark mode sync
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.documentElement.classList.add('dark');
-  }
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-    if (event.matches) document.documentElement.classList.add('dark');
-    else document.documentElement.classList.remove('dark');
-  });
+  // Simple dark mode sync (desactivado — descomentar para re-habilitar)
+  // if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  //   document.documentElement.classList.add('dark');
+  // }
+  // window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+  //   if (event.matches) document.documentElement.classList.add('dark');
+  //   else document.documentElement.classList.remove('dark');
+  // });
 
   // Load nav helper (if not present) and activate nav links
   await (async function loadNav(){

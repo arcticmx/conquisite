@@ -55,6 +55,11 @@ function renderCategories(){
   const container = document.getElementById('package-categories');
   if(!container) return;
   const categories = ['All', ...Array.from(new Set(packagesData.map(s=>s.category)))];
+
+  // update badge count
+  const badge = document.getElementById('package-categories-count');
+  if(badge) badge.textContent = categories.length - 1; // excluding "All"
+
   container.innerHTML = '';
   categories.forEach((cat,idx)=>{
     const btn = document.createElement('button');
@@ -68,6 +73,14 @@ function renderCategories(){
       currentCategory = cat;
       currentPage = 1;
       applyFilters();
+      // collapse panel on mobile after selecting
+      const panel = document.getElementById('package-categories-panel');
+      const toggle = document.getElementById('package-categories-toggle');
+      if(panel && toggle && window.matchMedia('(max-width: 639px)').matches){
+        panel.style.display = 'none';
+        toggle.setAttribute('aria-expanded','false');
+        toggle.querySelector('.material-icons-outlined').textContent = 'expand_more';
+      }
     });
     const arrow = document.createElement('span');
     arrow.className = 'material-icons-outlined text-lg opacity-0 group-hover:opacity-100 transition-opacity';
@@ -75,34 +88,151 @@ function renderCategories(){
     btn.appendChild(arrow);
     container.appendChild(btn);
   });
+
+  // Setup mobile collapse behavior
+  const toggle = document.getElementById('package-categories-toggle');
+  const panel = document.getElementById('package-categories-panel');
+  if(toggle && panel){
+    const isDesktop = window.matchMedia && window.matchMedia('(min-width: 640px)').matches;
+    if(!isDesktop){
+      panel.style.display = 'none';
+      toggle.setAttribute('aria-expanded','false');
+      toggle.querySelector('.material-icons-outlined').textContent = 'expand_more';
+    } else {
+      panel.style.display = 'block';
+      toggle.setAttribute('aria-expanded','true');
+      toggle.querySelector('.material-icons-outlined').textContent = 'expand_less';
+    }
+    toggle.addEventListener('click', ()=>{
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      if(expanded){
+        panel.style.display = 'none';
+        toggle.setAttribute('aria-expanded','false');
+        toggle.querySelector('.material-icons-outlined').textContent = 'expand_more';
+      } else {
+        panel.style.display = 'block';
+        toggle.setAttribute('aria-expanded','true');
+        toggle.querySelector('.material-icons-outlined').textContent = 'expand_less';
+      }
+    });
+    let _rt;
+    window.addEventListener('resize', ()=>{
+      clearTimeout(_rt);
+      _rt = setTimeout(()=>{
+        const nowDesktop = window.matchMedia('(min-width: 640px)').matches;
+        if(nowDesktop){
+          panel.style.display = 'block';
+          toggle.setAttribute('aria-expanded','true');
+          toggle.querySelector('.material-icons-outlined').textContent = 'expand_less';
+        } else {
+          panel.style.display = 'none';
+          toggle.setAttribute('aria-expanded','false');
+          toggle.querySelector('.material-icons-outlined').textContent = 'expand_more';
+        }
+      }, 120);
+    });
+  }
 }
 
 function renderGrid(){
   const grid = document.getElementById('package-grid');
-  const countEl = document.querySelector('.mb-6 p span.font-bold');
-  if(!grid) return;
+  const accordion = document.getElementById('packages-list-accordion');
+  const countEl = document.getElementById('package-count-label');
+  if(!grid && !accordion) return;
   const start = (currentPage-1)*PACKAGES_PER_PAGE;
   const pageItems = filtered.slice(start, start+PACKAGES_PER_PAGE);
-  grid.innerHTML = '';
-  pageItems.forEach(s=>{
-    const card = document.createElement('div');
-    card.className = 'group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer h-72';
-    card.addEventListener('click', () => { location.href = `pack-detail.html?id=${s.id}`; });
-    card.innerHTML = `
-      <img alt="${s.title}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="${s.image}"/>
-      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
-      <div class="absolute bottom-0 left-0 p-6 w-full">
-        <div class="flex items-center gap-2 mb-2 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"><span class="bg-white/20 backdrop-blur text-white text-xs px-2 py-1 rounded">${s.prep || ''}</span></div>
-        <h3 class="text-xl font-bold text-white mb-1 leading-tight">${s.title}</h3>
-        <p class="text-slate-200 text-xs line-clamp-2 opacity-80 mb-2">${s.description}</p>
-        <div class="flex items-center gap-3">
-          <a href="pack-detail.html?id=${s.id}" class="text-white text-sm font-bold flex items-center gap-1 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-75">Ver paquete <span class="material-icons-outlined text-sm">arrow_forward</span></a>
-          <span class="text-white font-bold ml-auto">$ ${s.price || ''}</span>
+
+  // ── Grid md+ ─────────────────────────────────────────────────────────────
+  if(grid){
+    grid.innerHTML = '';
+    pageItems.forEach(s=>{
+      const card = document.createElement('div');
+      card.className = 'group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer h-72';
+      card.addEventListener('click', () => { location.href = `pack-detail.html?id=${s.id}`; });
+      card.innerHTML = `
+        <img alt="${s.title}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="${s.image}"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-6 w-full">
+          <div class="flex items-center gap-2 mb-2 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"><span class="bg-white/20 backdrop-blur text-white text-xs px-2 py-1 rounded">${s.prep || ''}</span></div>
+          <h3 class="text-xl font-bold text-white mb-1 leading-tight">${s.title}</h3>
+          <p class="text-slate-200 text-xs line-clamp-2 opacity-80 mb-2">${s.description}</p>
+          <div class="flex items-center gap-3">
+            <a href="pack-detail.html?id=${s.id}" class="text-white text-sm font-bold flex items-center gap-1 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-75">Ver paquete <span class="material-icons-outlined text-sm">arrow_forward</span></a>
+            <span class="text-white font-bold ml-auto">$ ${s.price || ''}</span>
+          </div>
         </div>
-      </div>
-    `;
-    grid.appendChild(card);
-  });
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  // ── Accordion mobile ──────────────────────────────────────────────────────
+  if(accordion){
+    accordion.innerHTML = '';
+    pageItems.forEach(s=>{
+      const item = document.createElement('div');
+      item.className = 'bg-white dark:bg-slate-800 rounded-xl shadow-sm overflow-hidden border border-slate-100 dark:border-slate-700';
+      item.innerHTML = `
+        <div class="flex items-center justify-between p-3 cursor-pointer">
+          <div class="flex items-center gap-3 flex-1 min-w-0">
+            <img src="${s.image}" alt="${s.title}" class="w-12 h-12 rounded-lg object-cover shrink-0"/>
+            <div class="min-w-0">
+              <div class="text-sm font-semibold text-slate-800 dark:text-white truncate">${s.title}</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400">${s.category || ''}</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 shrink-0 pl-2">
+            <span class="text-sm font-bold text-primary hidden sm:block">$${Number(s.price||0).toLocaleString('es-MX')}</span>
+            <button class="accordion-toggle p-2 rounded-md text-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700/50" aria-expanded="false">
+              <span class="material-icons-outlined">expand_more</span>
+            </button>
+          </div>
+        </div>
+        <div class="accordion-panel hidden border-t border-slate-100 dark:border-slate-700">
+          <div class="p-4 flex gap-4">
+            <div class="flex-1 min-w-0">
+              <p class="text-sm text-slate-600 dark:text-slate-300 line-clamp-3">${s.description}</p>
+              <div class="flex items-center gap-3 mt-2">
+                ${s.prep ? `<span class="text-xs bg-primary/10 text-primary px-2 py-0.5 rounded-full">${s.prep}</span>` : ''}
+                ${s.duration ? `<span class="text-xs bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded-full">${s.duration}</span>` : ''}
+              </div>
+            </div>
+          </div>
+          <div class="px-4 pb-4 flex items-center justify-between">
+            <span class="text-lg font-bold text-primary">$${Number(s.price||0).toLocaleString('es-MX')} <span class="text-xs font-normal text-slate-400">MXN</span></span>
+            <a href="pack-detail.html?id=${s.id}" class="inline-flex items-center gap-1 bg-primary text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+              Ver paquete <span class="material-icons-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      `;
+
+      const header = item.firstElementChild;
+      const toggleBtn = item.querySelector('.accordion-toggle');
+      const panel = item.querySelector('.accordion-panel');
+
+      function doToggle(){
+        const expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+        toggleBtn.setAttribute('aria-expanded', (!expanded).toString());
+        if(expanded){
+          panel.classList.add('hidden');
+          toggleBtn.querySelector('.material-icons-outlined').textContent = 'expand_more';
+        } else {
+          panel.classList.remove('hidden');
+          toggleBtn.querySelector('.material-icons-outlined').textContent = 'expand_less';
+        }
+      }
+
+      header.addEventListener('click', (ev)=>{
+        if(ev.target.closest('a')) return; // let links navigate
+        doToggle();
+      });
+      toggleBtn.addEventListener('click', (ev)=>{ ev.stopPropagation(); doToggle(); });
+
+      accordion.appendChild(item);
+    });
+  }
+
   if(countEl) countEl.textContent = filtered.length;
   renderPagination();
 }

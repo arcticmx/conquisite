@@ -154,43 +154,67 @@ function renderGrid(){
     accordion.innerHTML = '';
     pageItems.forEach(s=>{
       const item = document.createElement('div');
-      item.className = 'bg-white dark:bg-slate-800 rounded-xl shadow-sm overflow-hidden';
+      item.className = 'bg-white dark:bg-slate-800 rounded-xl shadow-sm overflow-hidden border border-slate-100 dark:border-slate-700';
+      const prepChip = (s.preparation && s.preparation.length)
+        ? `<span class="text-xs bg-primary/10 text-primary px-2 py-0.5 rounded-full">${s.preparation[0].split(':')[0] || s.preparation[0]}</span>`
+        : '';
+      const durChip = s.duration
+        ? `<span class="text-xs bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded-full">${s.duration}</span>`
+        : '';
       item.innerHTML = `
-        <div class="flex items-center justify-between p-3">
-          <div class="flex items-center gap-3">
-            <img src="${s.image}" alt="${s.title}" class="w-12 h-12 rounded-md object-cover"/>
-            <div>
-              <div class="text-sm font-medium text-slate-800 dark:text-white">${s.title}</div>
+        <div class="flex items-center justify-between p-3 cursor-pointer">
+          <div class="flex items-center gap-3 flex-1 min-w-0">
+            <img src="${s.image}" alt="${s.title}" class="w-12 h-12 rounded-lg object-cover shrink-0"/>
+            <div class="min-w-0">
+              <div class="text-sm font-semibold text-slate-800 dark:text-white truncate">${s.title}</div>
               <div class="text-xs text-slate-500 dark:text-slate-400">${s.category}</div>
             </div>
           </div>
-          <button class="accordion-toggle p-2 rounded-md text-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700/50" aria-expanded="false"><span class="material-icons-outlined">expand_more</span></button>
+          <div class="flex items-center gap-2 shrink-0 pl-2">
+            ${s.price ? `<span class="text-sm font-bold text-primary hidden sm:block">$${Number(s.price).toLocaleString('es-MX')}</span>` : ''}
+            <button class="accordion-toggle p-2 rounded-md text-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700/50" aria-expanded="false">
+              <span class="material-icons-outlined">expand_more</span>
+            </button>
+          </div>
         </div>
-        <div class="accordion-panel hidden p-4 border-t border-slate-100 dark:border-slate-700">
-          <p class="text-sm text-slate-600 dark:text-slate-300 line-clamp-4">${s.description}</p>
-          <div class="mt-3 flex justify-end">
-            <button class="view-study text-primary font-bold">Ver estudio</button>
+        <div class="accordion-panel hidden border-t border-slate-100 dark:border-slate-700">
+          <div class="p-4 flex-1 min-w-0">
+            <p class="text-sm text-slate-600 dark:text-slate-300 line-clamp-3">${s.description}</p>
+            <div class="flex items-center gap-3 mt-2">
+              ${prepChip}${durChip}
+            </div>
+          </div>
+          <div class="px-4 pb-4 flex items-center justify-between">
+            ${s.price ? `<span class="text-lg font-bold text-primary">$${Number(s.price).toLocaleString('es-MX')} <span class="text-xs font-normal text-slate-400">MXN</span></span>` : '<span></span>'}
+            <a href="study-detail.html?id=${encodeURIComponent(s.id)}" class="inline-flex items-center gap-1 bg-primary text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+              Ver estudio <span class="material-icons-outlined text-sm">arrow_forward</span>
+            </a>
           </div>
         </div>
       `;
-      const toggle = item.querySelector('.accordion-toggle');
-      const panel = item.querySelector('.accordion-panel');
-      const viewBtn = item.querySelector('.view-study');
-      // header click toggles except when clicking view button
+
       const header = item.firstElementChild;
+      const toggleBtn = item.querySelector('.accordion-toggle');
+      const panel = item.querySelector('.accordion-panel');
+
+      function doToggle(){
+        const expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+        toggleBtn.setAttribute('aria-expanded', (!expanded).toString());
+        if(expanded){
+          panel.classList.add('hidden');
+          toggleBtn.querySelector('.material-icons-outlined').textContent = 'expand_more';
+        } else {
+          panel.classList.remove('hidden');
+          toggleBtn.querySelector('.material-icons-outlined').textContent = 'expand_less';
+        }
+      }
+
       header.addEventListener('click', (ev)=>{
-        if(ev.target.closest('.view-study')) return;
-        if(ev.target.closest('.accordion-toggle')){ toggle.click(); return; }
-        toggle.click();
+        if(ev.target.closest('a')) return;
+        doToggle();
       });
-      toggle.addEventListener('click', (ev)=>{
-        ev.stopPropagation();
-        const expanded = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', (!expanded).toString());
-        if(expanded){ panel.classList.add('hidden'); toggle.querySelector('.material-icons-outlined').textContent = 'expand_more'; }
-        else { panel.classList.remove('hidden'); toggle.querySelector('.material-icons-outlined').textContent = 'expand_less'; }
-      });
-      if(viewBtn) viewBtn.addEventListener('click', (ev)=>{ ev.stopPropagation(); window.location.href = `study-detail.html?id=${encodeURIComponent(s.id)}`; });
+      toggleBtn.addEventListener('click', (ev)=>{ ev.stopPropagation(); doToggle(); });
+
       accordion.appendChild(item);
     });
   }

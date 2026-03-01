@@ -7,7 +7,7 @@
 // ─────────────────────────────────────────────────────────────
 window.WA = (function () {
 
-  var NUMBER = '5215512345678';
+  var NUMBER = '523330345836';
 
   function open(text) {
     window.open('https://wa.me/' + NUMBER + '?text=' + encodeURIComponent(text), '_blank');
@@ -15,16 +15,16 @@ window.WA = (function () {
 
   // Boton generico "Agendar Cita" (hero, header, etc.)
   function agendarGeneral() {
-    open('Hola CONQUI, me gustaria agendar una cita. \u00bfMe pueden indicar disponibilidad y horarios?');
+    open('Hola CONQUI, me gustaria agendar una cita. ¿Me pueden indicar disponibilidad y horarios?');
   }
 
   // Detalle de estudio
   function agendarEstudio(title, category, price) {
     var lines = [
       'Hola CONQUI, me gustaria agendar una cita para el siguiente estudio:',
-      '\ud83d\udccb *' + (title || 'Estudio') + '*' + (category ? ' (' + category + ')' : ''),
-      price ? '\ud83d\udcb0 Precio: ' + price : '',
-      '\u00bfMe pueden indicar disponibilidad y horarios?'
+      '- *' + (title || 'Estudio') + '*' + (category ? ' (' + category + ')' : ''),
+      price ? '- Precio: ' + price : '',
+      '¿Me pueden indicar disponibilidad y horarios?'
     ].filter(Boolean).join('\n');
     open(lines);
   }
@@ -33,9 +33,9 @@ window.WA = (function () {
   function agendarPaquete(title, category, price) {
     var lines = [
       'Hola CONQUI, me gustaria agendar una cita para el siguiente paquete:',
-      '\ud83d\udccb *' + (title || 'Paquete') + '*' + (category ? ' (' + category + ')' : ''),
-      price ? '\ud83d\udcb0 Precio: ' + price : '',
-      '\u00bfMe pueden indicar disponibilidad y horarios?'
+      '- *' + (title || 'Paquete') + '*' + (category ? ' (' + category + ')' : ''),
+      price ? '- Precio: ' + price : '',
+      '¿Me pueden indicar disponibilidad y horarios?'
     ].filter(Boolean).join('\n');
     open(lines);
   }
@@ -43,17 +43,17 @@ window.WA = (function () {
   // Formulario de contacto
   function enviarFormulario(nombre, email, telefono, asunto, mensaje) {
     var asuntoMap = {
-      info: 'Informaci\u00f3n General',
+      info: 'Información General',
       citas: 'Agendar Cita',
       resultados: 'Resultados',
       quejas: 'Sugerencias'
     };
     var lines = [
       'Hola CONQUI, me llamo *' + nombre + '*.',
-      telefono ? '\ud83d\udcde Tel\u00e9fono: ' + telefono : '',
-      '\ud83d\udce7 Email: ' + email,
-      asunto ? '\ud83d\udccb Asunto: ' + (asuntoMap[asunto] || asunto) : '',
-      '\ud83d\udcac ' + mensaje
+      telefono ? 'Tel: ' + telefono : '',
+      'Email: ' + email,
+      asunto ? 'Asunto: ' + (asuntoMap[asunto] || asunto) : '',
+      'Mensaje: ' + mensaje
     ].filter(Boolean).join('\n');
     open(lines);
   }

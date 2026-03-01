@@ -22,7 +22,7 @@ window.WA = (function () {
   function agendarEstudio(title, category, price) {
     var lines = [
       'Hola CONQUI, me gustaria agendar una cita para el siguiente estudio:',
-      '- *' + (title || 'Estudio') + '*' + (category ? ' (' + category + ')' : ''),
+      '- ' + (title || 'Estudio') + ' ' + (category ? ' (' + category + ')' : ''),
       price ? '- Precio: ' + price : '',
       '¿Me pueden indicar disponibilidad y horarios?'
     ].filter(Boolean).join('\n');
@@ -33,7 +33,7 @@ window.WA = (function () {
   function agendarPaquete(title, category, price) {
     var lines = [
       'Hola CONQUI, me gustaria agendar una cita para el siguiente paquete:',
-      '- *' + (title || 'Paquete') + '*' + (category ? ' (' + category + ')' : ''),
+      '- ' + (title || 'Paquete') + ' ' + (category ? ' (' + category + ')' : ''),
       price ? '- Precio: ' + price : '',
       '¿Me pueden indicar disponibilidad y horarios?'
     ].filter(Boolean).join('\n');
@@ -49,7 +49,7 @@ window.WA = (function () {
       quejas: 'Sugerencias'
     };
     var lines = [
-      'Hola CONQUI, me llamo *' + nombre + '*.',
+      'Hola CONQUI, me llamo ' + nombre + '.',
       telefono ? 'Tel: ' + telefono : '',
       'Email: ' + email,
       asunto ? 'Asunto: ' + (asuntoMap[asunto] || asunto) : '',

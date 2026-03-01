@@ -33,9 +33,7 @@
   //   document.documentElement.classList.toggle('dark', e.matches);
   // });
 
-  // Inject nav helper
-  const s = document.createElement('script');
-  s.src = base + 'assets/js/nav.js';
-  s.async = true;
-  document.body.appendChild(s);
+  // nav.js se carga como script estático antes de shell.js — invocar helpers directamente
+  if(typeof window.setupMobileMenu === 'function') window.setupMobileMenu();
+  if(typeof window.activateNavLinks === 'function') window.activateNavLinks();
 })();

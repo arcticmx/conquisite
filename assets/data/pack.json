@@ -5,7 +5,7 @@
       "title": "Check-up Integral Mujer",
       "category": "Paquete Preventivo",
       "description": "Evaluación médica completa diseñada específicamente para la salud femenina, enfocada en la detección temprana de las patologías más comunes.",
-      "image": "https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=600&auto=format&fit=crop",
+      "image": "https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=50&w=300&auto=format&fit=crop",
       "prep": "Ayuno 8 horas",
       "price": 4850,
       "regular_price": 6050,
@@ -24,7 +24,7 @@
       "benefits": "Este paquete integral está diseñado para proporcionar una visión completa de su estado de salud actual. Permite la detección oportuna de padecimientos silenciosos como la diabetes, hipertensión, dislipidemias, osteoporosis y cáncer de mama.",
       "benefits_tip": "Prevención Activa: Realizar este estudio anualmente puede aumentar significativamente las probabilidades de un tratamiento exitoso ante cualquier anomalía detectada.",
       "preparation": [
-        { "icon": "restaurant_menu", "title": "Ayuno Requerido", "description": "Presentarse con un ayuno mínimo de 8 horas y máximo de 12 horas. Puede beber agua simple." },
+        { "icon": "restaurant_menu", "title": "Ayuno", "description": "Presentarse con un ayuno mínimo de 8 horas y máximo de 12 horas. Puede beber agua simple." },
         { "icon": "water_drop", "title": "Muestra de Orina", "description": "Se recomienda recolectar la primera orina de la mañana o tener una retención de 2 horas mínimo." },
         { "icon": "checkroom", "title": "Ropa Cómoda", "description": "Acudir con ropa de dos piezas para facilitar los estudios de imagenología (ultrasonido y mastografía)." }
       ],
@@ -38,7 +38,7 @@
       "title": "Check-up Integral Hombre",
       "category": "Paquete Preventivo",
       "description": "Evaluación preventiva enfocada en los principales factores de riesgo masculino: cardíaco, metabólico y urológico.",
-      "image": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=600&auto=format&fit=crop",
+      "image": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=40&w=300&auto=format&fit=crop",
       "prep": "Ayuno 8 horas",
       "price": 4650,
       "regular_price": 5800,
@@ -57,7 +57,7 @@
       "benefits": "Diseñado para identificar los principales factores de riesgo en hombres mayores de 40 años. La detección temprana de alteraciones metabólicas y prostáticas mejora significativamente el pronóstico.",
       "benefits_tip": "Prevención Activa: Un chequeo anual puede detectar hasta el 80% de las enfermedades crónicas en etapa temprana, cuando el tratamiento es más efectivo.",
       "preparation": [
-        { "icon": "restaurant_menu", "title": "Ayuno Requerido", "description": "Presentarse con un ayuno mínimo de 8 horas y máximo de 12 horas. Puede beber agua simple." },
+        { "icon": "restaurant_menu", "title": "Ayuno", "description": "Presentarse con un ayuno mínimo de 8 horas y máximo de 12 horas. Puede beber agua simple." },
         { "icon": "water_drop", "title": "Muestra de Orina", "description": "Se recomienda tener retención de orina mínima de 2 horas." },
         { "icon": "checkroom", "title": "Ropa Cómoda", "description": "Acudir con ropa cómoda y dos piezas para facilitar el ultrasonido." }
       ],
@@ -71,13 +71,13 @@
       "title": "Paquete Cardíaco Premium",
       "category": "Paquete Especializado",
       "description": "Evaluación cardiológica completa con estudios de imagen avanzados para valorar la salud del corazón.",
-      "image": "https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?q=80&w=600&auto=format&fit=crop",
+      "image": "https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?q=40&w=300&auto=format&fit=crop",
       "prep": "Ropa cómoda",
       "price": 3200,
       "regular_price": 4000,
       "savings_label": "Ahorras $800 MXN",
       "duration": "3 horas aprox.",
-      "results": "24-48 horas",
+      "results": "48 horas",
       "full_description": "El paquete cardíaco premium agrupa los estudios más relevantes para evaluar la función y estructura del corazón. Ideal para personas con antecedentes familiares, hipertensión o sospecha de enfermedad coronaria.",
       "includes": [
         { "icon": "ecg_heart", "title": "Electrocardiograma en Reposo", "description": "Registro base de la actividad eléctrica cardíaca." },
@@ -104,7 +104,7 @@
       "title": "Paquete Metabólico Avanzado",
       "category": "Laboratorio Clínico",
       "description": "Panel completo de estudios de laboratorio para diagnóstico y seguimiento de enfermedades metabólicas crónicas.",
-      "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=600&auto=format&fit=crop",
+      "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=40&w=300&auto=format&fit=crop",
       "prep": "Ayuno 12 horas",
       "price": 1850,
       "regular_price": 2400,
@@ -123,7 +123,7 @@
       "benefits": "Indicado para pacientes con diagnóstico o sospecha de diabetes, obesidad, hipertensión o historial familiar de enfermedades metabólicas. Permite ajustar tratamientos y hábitos de manera oportuna.",
       "benefits_tip": "Seguimiento Efectivo: Realizarlo cada 3-6 meses permite a su médico ajustar el tratamiento con información objetiva y actualizada.",
       "preparation": [
-        { "icon": "restaurant_menu", "title": "Ayuno Estricto", "description": "Se requiere ayuno mínimo de 12 horas. Puede beber agua simple sin gas." },
+        { "icon": "restaurant_menu", "title": "Ayuno", "description": "Se requiere ayuno mínimo de 12 horas. Puede beber agua simple sin gas." },
         { "icon": "medication", "title": "Medicamentos", "description": "Consultar con su médico si debe suspender hipoglucemiantes el día del estudio." },
         { "icon": "sports", "title": "Evitar Ejercicio", "description": "No realizar ejercicio intenso las 24 horas previas para no alterar los resultados." }
       ],
@@ -138,13 +138,13 @@
       "title": "Paquete Oncológico Preventivo",
       "category": "Paquete Especializado",
       "description": "Panel de tamizaje oncológico multiorgánico que combina marcadores tumorales séricos de alta especificidad con ultrasonido abdominal y pélvico para detección precoz.",
-      "image": "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=600&auto=format&fit=crop",
+      "image": "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=40&w=300&auto=format&fit=crop",
       "prep": "Ayuno 8 horas",
       "price": 3950,
       "regular_price": 5100,
       "savings_label": "Ahorras $1,150 MXN",
       "duration": "2.5 horas aprox.",
-      "results": "48–72 horas",
+      "results": "72 horas",
       "full_description": "El Paquete Oncológico Preventivo está diseñado para personas con antecedentes familiares de cáncer o mayores de 45 años que buscan un tamizaje multiorgánico en una sola visita. Combina la determinación sérica de los marcadores tumorales más relevantes por órgano —determinados por inmunoensayo ECLIA de alta sensibilidad— con ultrasonido abdominal completo y pélvico para correlacionar hallazgos bioquímicos con morfología. Los marcadores incluyen PSA (próstata), CEA (colon, pulmón), CA-125 (ovario), AFP (hígado), CA 19-9 (páncreas) y CA 15-3 (mama), todos en una sola extracción de sangre.",
       "includes": [
         { "icon": "science", "title": "PSA Total y Libre", "description": "Tamizaje de patología prostática benigna y maligna. Incluye índice PSA libre/total." },
@@ -157,7 +157,7 @@
       "benefits": "Los marcadores tumorales son herramientas de tamizaje y seguimiento que, combinados con imagen, aumentan significativamente su valor predictivo. Este paquete permite a su médico tener un mapa multisistémico completo en una sola jornada para orientar estudios confirmatorios si se detecta alguna alteración.",
       "benefits_tip": "Detección Temprana: El cáncer detectado en etapa I tiene tasas de supervivencia a 5 años superiores al 90% en la mayoría de tipos. El tamizaje preventivo anual es la intervención con mayor impacto en mortalidad oncológica.",
       "preparation": [
-        { "icon": "restaurant_menu", "title": "Ayuno de 8 Horas", "description": "Obligatorio para laboratorio y ultrasonido abdominal. Solo agua simple permitida." },
+        { "icon": "restaurant_menu", "title": "Ayuno", "description": "Obligatorio para laboratorio y ultrasonido abdominal. Solo agua simple permitida." },
         { "icon": "sports", "title": "Restricción para PSA", "description": "Abstinencia sexual y evitar ciclismo, equitación o actividad física intensa las 72 horas previas al estudio para no elevar artificialmente el PSA." },
         { "icon": "checkroom", "title": "Ropa de Dos Piezas", "description": "Facilita el acceso para el ultrasonido sin necesidad de desvestirse completamente. Evitar cintos con hebilla metálica." },
         { "icon": "medication", "title": "Tratamientos Oncológicos Activos", "description": "Si está en quimioterapia o radioterapia, infórmelo al momento de registrarse: los rangos de referencia se interpretan de forma diferente." }
@@ -172,7 +172,7 @@
       "title": "Paquete Prenatal Primer Trimestre",
       "category": "Paquete Ginecológico",
       "description": "Protocolo integral de laboratorio e imagen para el control prenatal del primer trimestre, con cribado de anomalías cromosómicas, infecciones del TORCH y evaluación fetal.",
-      "image": "https://images.unsplash.com/photo-1609220136736-443140cffec6?q=80&w=600&auto=format&fit=crop",
+      "image": "https://images.unsplash.com/photo-1609220136736-443140cffec6?q=40&w=300&auto=format&fit=crop",
       "prep": "Sin ayuno (salvo laboratorio)",
       "price": 3100,
       "regular_price": 3900,
@@ -206,7 +206,7 @@
       "title": "Paquete Neurológico Diagnóstico",
       "category": "Paquete Especializado",
       "description": "Evaluación multimodal del sistema nervioso central que combina RM cerebral con espectroscopia, EEG digital y laboratorio neurológico para diagnóstico de cefaleas, epilepsia y deterioro cognitivo.",
-      "image": "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?q=80&w=600&auto=format&fit=crop",
+      "image": "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?q=40&w=300&auto=format&fit=crop",
       "prep": "Sin ayuno",
       "price": 5800,
       "regular_price": 7400,
@@ -225,7 +225,7 @@
       "benefits": "El diagnóstico neurológico tardío es una de las causas más frecuentes de discapacidad prevenible. Este paquete comprime semanas de estudios fragmentados en una sola jornada clínica, con integración multidisciplinaria de neuroimagen, neurofisiología y laboratorio para llegar a un diagnóstico diferencial preciso y orientado.",
       "benefits_tip": "Diagnóstico Preciso: El 40% de los pacientes con epilepsia de nuevo diagnóstico tienen un EEG normal en el primer registro. Combinarlo con RM cerebral eleva la certeza diagnóstica al 78% y evita años de tratamiento empírico innecesario.",
       "preparation": [
-        { "icon": "restaurant_menu", "title": "Sin Ayuno Requerido", "description": "Este paquete no requiere ayuno. Puede desayunar normalmente, evitando exceso de café o estimulantes." },
+        { "icon": "restaurant_menu", "title": "Sin Ayuno", "description": "Este paquete no requiere ayuno. Puede desayunar normalmente, evitando exceso de café o estimulantes." },
         { "icon": "medication", "title": "Antiepilépticos y Psicofármacos", "description": "NO suspender medicación antiepiléptica sin indicación del neurólogo responsable. Informar todos los fármacos al momento del registro." },
         { "icon": "checkroom", "title": "Cabello Limpio y Sin Productos", "description": "Para el EEG, acudir con cabello limpio, seco y sin gel, laca, aceite ni tintes recientes. Esta es la preparación más importante del paquete." },
         { "icon": "radiology", "title": "Implantes y Contraindicaciones para RM", "description": "Declarar marcapasos, stents cerebrales, clips de aneurisma o cualquier implante metálico. Estas condiciones pueden excluir la RM con gadolinio." }
@@ -239,7 +239,7 @@
       "title": "Check-up Ejecutivo Plus",
       "category": "Paquete Preventivo",
       "description": "Programa de evaluación preventiva premium para profesionales activos. Más de 60 parámetros en 90 minutos: laboratorio completo, imagen, cardiología y entrega de resultados con asesoría médica personalizada.",
-      "image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=600&auto=format&fit=crop",
+      "image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=40&w=300&auto=format&fit=crop",
       "prep": "Ayuno 8–10 horas",
       "price": 5500,
       "regular_price": 7200,
@@ -258,7 +258,7 @@
       "benefits": "El Check-up Ejecutivo Plus suprime el principal obstáculo de la medicina preventiva: el tiempo. Al concentrar evaluación de laboratorio, imagen, cardiología y consulta médica en 90 minutos, elimina la fragmentación del sistema y permite recibir un plan de salud completo y coherente en menos de 24 horas.",
       "benefits_tip": "Retorno de Inversión en Salud: Estudios publicados en el Journal of Occupational Health demuestran que cada peso invertido en salud preventiva ejecutiva genera un ahorro de hasta $6 pesos en costos médicos curativos y ausentismo laboral.",
       "preparation": [
-        { "icon": "restaurant_menu", "title": "Ayuno de 8 a 10 Horas", "description": "Fundamental para glucosa, triglicéridos y perfil lipídico. Puede beber agua o tomar medicamentos habituales con un pequeño trago." },
+        { "icon": "restaurant_menu", "title": "Ayuno de 8", "description": "Fundamental para glucosa, triglicéridos y perfil lipídico. Puede beber agua o tomar medicamentos habituales con un pequeño trago." },
         { "icon": "checkroom", "title": "Ropa Sin Herrajes y Dos Piezas", "description": "Facilita el acceso para ECG, ultrasonido y bioimpedancia. Retirar reloj, cinturón y joyas antes de la cita." },
         { "icon": "calendar_month", "title": "Reservar 90 Minutos", "description": "El programa está cronometrado para cumplirse en 90 minutos. Se recomienda cita en horario matutino de lunes a viernes para aprovechar el ayuno nocturno." },
         { "icon": "description", "title": "Historial Médico y Medicamentos", "description": "Traer lista de medicamentos actuales, estudios previos relevantes (últimos 2 años) y nombre de su médico de cabecera para la entrevista de cierre." }

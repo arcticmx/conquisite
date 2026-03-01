@@ -5,32 +5,32 @@
       "title": "Biometría Hemática Completa",
       "category": "Laboratorio Clínico",
       "description": "Evaluación completa de los elementos celulares de la sangre: eritrocitos, leucocitos y plaquetas, con 24 parámetros para detectar anemias, infecciones y trastornos hematológicos.",
-      "image": "https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=600&auto=format&fit=crop",
+      "image": "https://images.unsplash.com/photo-1579154204601-01588f351e67?q=40&w=300&auto=format&fit=crop",
       "full_description": "La Biometría Hemática Completa (BHC) es uno de los estudios de laboratorio más solicitados en medicina preventiva y diagnóstica. Analiza los tres líneas celulares de la sangre: la serie roja (hemoglobina, hematocrito, eritrocitos, VCM, HCM), la serie blanca (leucocitos totales y diferencial) y las plaquetas. Permite identificar con alta sensibilidad condiciones como anemia ferropénica, infecciones bacterianas o virales, leucemias, trombocitopenias y poliglobulias. Es estudio base en cualquier protocolo preventivo o diagnóstico.",
       "preparation": [
-        "No requiere ayuno para este estudio",
+        "No requiere ayuno",
         "Informar al personal si toma anticoagulantes (warfarina, rivaroxabán, aspirina)",
         "Evitar ejercicio intenso las 12 horas previas para no alterar el recuento leucocitario",
         "Hidratarse bien el día anterior facilita la extracción de sangre"
       ],
       "duration": "10 minutos aprox.",
       "price": 280,
-      "results": "Mismo día (3-4 horas)",
+      "results": "3-4 horas",
       "locations": [
         { "name": "Sucursal Central", "address": "Av. Reforma 222, Col. Juárez, CDMX", "availability": "Citas hoy disponibles", "available": true },
         { "name": "Sucursal Sur", "address": "Periférico Sur 4500, Col. Jardines del Pedregal, CDMX", "availability": "Disponible mañana", "available": true }
       ],
-      "images": ["https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=600&auto=format&fit=crop"]
+      "images": ["https://images.unsplash.com/photo-1579154204601-01588f351e67?q=40&w=300&auto=format&fit=crop"]
     },
     {
       "id": 2,
       "title": "Química Sanguínea 27 Elementos",
       "category": "Laboratorio Clínico",
       "description": "Panel metabólico ampliado que evalúa función renal, hepática, glucémica y lipídica a través de 27 determinaciones bioquímicas para un diagnóstico integral.",
-      "image": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=600&auto=format&fit=crop",
+      "image": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=40&w=300&auto=format&fit=crop",
       "full_description": "La Química Sanguínea de 27 elementos es el panel bioquímico más completo disponible para tamizaje metabólico. Incluye glucosa en ayuno, urea, creatinina, ácido úrico, bilirrubinas (directa, indirecta y total), proteínas totales, albúmina, globulinas, transaminasas (TGO/TGP), fosfatasa alcalina, LDH, colesterol total, triglicéridos, HDL, LDL, VLDL, sodio, potasio, cloro, calcio, fósforo, hierro sérico, TIBC, magnesio y amilasa. Proporciona una visión 360° del metabolismo del paciente en un solo estudio.",
       "preparation": [
-        "Ayuno estricto de 8 a 12 horas (sólidos y líquidos excepto agua simple)",
+        "Ayuno estricto",
         "Puede tomar sus medicamentos habituales con un poco de agua, salvo indicación médica contraria",
         "Evitar alcohol las 72 horas previas — altera triglicéridos y transaminasas",
         "No realizar ejercicio intenso las 24 horas previas al estudio",
@@ -44,17 +44,17 @@
         { "name": "Sucursal Sur", "address": "Periférico Sur 4500, Col. Jardines del Pedregal, CDMX", "availability": "Disponible mañana", "available": true },
         { "name": "Sucursal Norte", "address": "Insurgentes Norte 1200, Col. Lindavista, CDMX", "availability": "Disponible esta semana", "available": true }
       ],
-      "images": ["https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=600&auto=format&fit=crop"]
+      "images": ["https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=40&w=300&auto=format&fit=crop"]
     },
     {
       "id": 3,
       "title": "Resonancia Magnética (RM) Cerebral",
       "category": "Radiología e Imagen",
       "description": "Tecnología de 1.5 Tesla para obtener imágenes de alta resolución del cerebro y tronco encefálico sin radiación ionizante, ideal para diagnóstico neurológico avanzado.",
-      "image": "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?q=80&w=600&auto=format&fit=crop",
+      "image": "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?q=40&w=300&auto=format&fit=crop",
       "full_description": "La Resonancia Magnética (RM) cerebral emplea un campo magnético de 1.5 Tesla y secuencias de pulsos de radiofrecuencia para generar imágenes multiplanares de alta resolución del parénquima cerebral, sistema ventricular, estructuras de la fosa posterior y tronco encefálico. No utiliza radiación ionizante, lo que la hace segura para estudios seriados. Es el gold standard para diagnóstico de esclerosis múltiple, tumores primarios y metastásicos, accidentes cerebrovasculares, malformaciones vasculares, epilepsia de difícil control y enfermedades neurodegenerativas como Alzheimer y Parkinson. El protocolo estándar incluye secuencias T1, T2, FLAIR, DWI y, cuando se requiere, T1 con gadolinio.",
       "preparation": [
-        "Si se empleará medio de contraste (gadolinio): ayuno de 4 a 6 horas previas",
+        "Ayuno 4 a 6 horas",
         "Retirar completamente objetos metálicos: aretes, piercing, prótesis dentales removibles, clips de cabello",
         "Avisar si porta marcapasos, stents, clips de aneurisma, prótesis valvulares, implantes cocleares o cualquier implante metálico",
         "Pacientes con claustrofobia: consultar previamente; puede prescribirse ansiolitico leve",
@@ -68,17 +68,17 @@
         { "name": "Sucursal Central", "address": "Av. Reforma 222, Col. Juárez, CDMX", "availability": "Citas hoy disponibles", "available": true },
         { "name": "Sucursal Sur", "address": "Periférico Sur 4500, Col. Jardines del Pedregal, CDMX", "availability": "Disponible esta semana", "available": true }
       ],
-      "images": ["https://images.unsplash.com/photo-1559757175-0eb30cd8c063?q=80&w=600&auto=format&fit=crop"]
+      "images": ["https://images.unsplash.com/photo-1559757175-0eb30cd8c063?q=40&w=300&auto=format&fit=crop"]
     },
     {
       "id": 4,
       "title": "Tomografía Computarizada (TC) Multicorte",
       "category": "Radiología e Imagen",
       "description": "Equipo de TC de 64 detectores para obtener secciones transversales del cuerpo con precisión submilimétrica, esencial en urgencias, trauma y patología abdominal.",
-      "image": "https://images.unsplash.com/photo-1516841273335-e39b37888115?q=80&w=600&auto=format&fit=crop",
+      "image": "https://images.unsplash.com/photo-1516841273335-e39b37888115?q=40&w=300&auto=format&fit=crop",
       "full_description": "La Tomografía Computarizada (TC) multicorte de 64 detectores permite adquirir cientos de imágenes en segundos con resolución submilimétrica en los tres planos del espacio. Fundamental en el diagnóstico de trauma (TCE, tórax, abdomen), patología aórtica, cálculos renales (uro-TC), nódulos pulmonares, apendicitis, cáncer colorrectal y hepatocelular. El tiempo de adquisición de imágenes reducido minimiza artefactos por movimiento. Cuando se requiere contraste intravenoso (yodado), se evaluará función renal previa.",
       "preparation": [
-        "Sin contraste: no se requiere ayuno",
+        "No se requiere ayuno",
         "Con contraste IV (yodado): ayuno de 4 horas. Se verificará creatinina sérica reciente",
         "Informar alergias a medios de contraste, mariscos o yodo",
         "Informar si está embarazada o en lactancia",
@@ -87,21 +87,21 @@
       ],
       "duration": "15–25 minutos aprox.",
       "price": 1400,
-      "results": "24–48 horas (reporte médico escrito)",
+      "results": "24–48 horas ",
       "locations": [
         { "name": "Sucursal Central", "address": "Av. Reforma 222, Col. Juárez, CDMX", "availability": "Citas hoy disponibles", "available": true }
       ],
-      "images": ["https://images.unsplash.com/photo-1516841273335-e39b37888115?q=80&w=600&auto=format&fit=crop"]
+      "images": ["https://images.unsplash.com/photo-1516841273335-e39b37888115?q=40&w=300&auto=format&fit=crop"]
     },
     {
       "id": 5,
       "title": "Ecocardiograma Doppler",
       "category": "Cardiología",
       "description": "Evaluación bidimensional y Doppler de la estructura y función cardíaca: cavidades, válvulas, fracción de eyección y flujos intracardíacos.",
-      "image": "https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?q=80&w=600&auto=format&fit=crop",
+      "image": "https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?q=40&w=300&auto=format&fit=crop",
       "full_description": "El Ecocardiograma Doppler es el estudio de imagen de elección para la evaluación no invasiva del corazón. Mediante ultrasonido de alta frecuencia analiza en tiempo real la motilidad parietal, dimensiones de cavidades, grosor miocárdico, función sistólica (Fracción de Eyección del Ventrículo Izquierdo — FEVI) y diastólica, morfología y función valvular (aórtica, mitral, tricúspide, pulmonar), derrame pericárdico y estimación de presiones pulmonares. Imprescindible en insuficiencia cardíaca, valvulopatías, cardiopatías congénitas, hipertensión arterial y seguimiento post-infarto.",
       "preparation": [
-        "No requiere ayuno para el estudio estándar transtorácico",
+        "No requiere ayuno",
         "Evitar ropa ajustada o con cierres en el tórax",
         "Acudir con el tórax limpio y sin cremas o aceites (afectan la conductividad del gel ultrasónico)",
         "Traer estudios cardíacos previos (ECG, radiografía de tórax) si cuenta con ellos",
@@ -109,19 +109,19 @@
       ],
       "duration": "30–45 minutos aprox.",
       "price": 1100,
-      "results": "48 horas (reporte cardiológico)",
+      "results": "48 horas",
       "locations": [
         { "name": "Sucursal Central", "address": "Av. Reforma 222, Col. Juárez, CDMX", "availability": "Citas hoy disponibles", "available": true },
         { "name": "Sucursal Norte", "address": "Insurgentes Norte 1200, Col. Lindavista, CDMX", "availability": "Disponible esta semana", "available": true }
       ],
-      "images": ["https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?q=80&w=600&auto=format&fit=crop"]
+      "images": ["https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?q=40&w=300&auto=format&fit=crop"]
     },
     {
       "id": 6,
       "title": "Electrocardiograma de Reposo (ECG)",
       "category": "Cardiología",
       "description": "Registro gráfico de 12 derivaciones de la actividad eléctrica cardíaca. Estudio rápido, indoloro y de bajo costo para detectar arritmias, bloqueos e isquemia.",
-      "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=600&auto=format&fit=crop",
+      "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=40&w=300&auto=format&fit=crop",
       "full_description": "El Electrocardiograma (ECG) de 12 derivaciones registra de forma simultánea la actividad eléctrica del corazón desde múltiples ángulos, permitiendo identificar con precisión: arritmias (fibrilación auricular, taquicardias supraventriculares, extrasístoles), bloqueos de rama, infarto agudo de miocardio (STEMI/NSTEMI), hipertrofia ventricular, síndromes de preexcitación (Wolf-Parkinson-White) y alteraciones electrolíticas que repercuten en la función cardíaca. Es el primer estudio en cualquier protocolo de valoración cardiovascular.",
       "preparation": [
         "No requiere ayuno",
@@ -138,280 +138,142 @@
         { "name": "Sucursal Sur", "address": "Periférico Sur 4500, Col. Jardines del Pedregal, CDMX", "availability": "Disponible hoy", "available": true },
         { "name": "Sucursal Norte", "address": "Insurgentes Norte 1200, Col. Lindavista, CDMX", "availability": "Disponible hoy", "available": true }
       ],
-      "images": ["https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=600&auto=format&fit=crop"]
+      "images": ["https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=40&w=300&auto=format&fit=crop"]
     },
     {
       "id": 7,
       "title": "Papanicolaou y Citología Cervical",
       "category": "Ginecología",
       "description": "Prueba de tamizaje de referencia internacional para la detección temprana de lesiones preinvasoras y cáncer de cuello uterino, con técnica en base líquida.",
-      "image": "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=600&auto=format&fit=crop",
+      "image": "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=40&w=300&auto=format&fit=crop",
       "full_description": "El Papanicolaou (Pap) con técnica en base líquida es el estándar de oro para el tamizaje de lesiones cervicales. La muestra se obtiene del exocérvix y endocérvix mediante espátula y cepillo, se procesa en solución conservadora y se evalúa bajo microscopía por citopatólogo certificado siguiendo el Sistema Bethesda 2014. Detecta cambios inflamatorios, infecciones (VPH, Chlamydia), lesiones intraepiteliales escamosas de bajo y alto grado (LEIBG/LEIAG) y carcinoma in situ o invasor. Se recomienda anualmente a partir de los 21 años o al inicio de vida sexual.",
       "preparation": [
-        "Programar el estudio fuera del período menstrual (idealmente del día 10 al 20 del ciclo)",
+        "Fuera del período menstrual",
         "Abstinencia sexual 48 horas antes del estudio",
         "No usar duchas vaginales, óvulos, cremas intravaginales ni espermicidas las 48 horas previas",
         "Inform al médico si está embarazada o en período postparto (esperar 6 semanas)",
         "Si tiene sangrado entre periodos, infórmelo antes de la toma de muestra"
       ],
-      "duration": "10–15 minutos aprox.",
+      "duration": "10–15 min aprox.",
       "price": 380,
       "results": "72 horas (reporte citopatológico)",
       "locations": [
         { "name": "Sucursal Central", "address": "Av. Reforma 222, Col. Juárez, CDMX", "availability": "Citas hoy disponibles", "available": true }
       ],
-      "images": ["https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=600&auto=format&fit=crop"]
+      "images": ["https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=40&w=300&auto=format&fit=crop"]
     },
     {
       "id": 8,
       "title": "Ultrasonido Obstétrico",
       "category": "Ginecología",
       "description": "Monitoreo del desarrollo fetal, anatomía y bienestar del embarazo mediante ultrasonografía de alta resolución. Incluye biometría fetal, placenta y líquido amniótico.",
-      "image": "https://images.unsplash.com/photo-1609220136736-443140cffec6?q=80&w=600&auto=format&fit=crop",
+      "image": "https://images.unsplash.com/photo-1609220136736-443140cffec6?q=40&w=300&auto=format&fit=crop",
       "full_description": "El Ultrasonido Obstétrico es el método de imagen primario para el control prenatal. En el primer trimestre (11-14 semanas) incluye medición de Longitud Corona-Rabadilla (LCR), translucencia nucal, hueso nasal y frecuencia cardíaca fetal. En el segundo trimestre (18-22 semanas) realiza anatomía fetal detallada, biometría completa (DBP, CC, CA, LF), localización y morfología placentaria, volumen de líquido amniótico e índice de pulsatilidad de arterias uterinas. En el tercer trimestre evalúa perfil biofísico y doppler umbilical. Estudio de alta seguridad: no utiliza radiación.",
       "preparation": [
-        "Primer trimestre (< 14 semanas): vejiga moderadamente llena — beber 500 ml de agua 1 hora antes sin orinar",
+        "Primer trimestre",
         "Segundo y tercer trimestre: no requiere preparación especial de vejiga",
         "Traer carnet prenatal, resultados de estudios previos y nombre completo del médico solicitante",
         "Usar ropa de dos piezas para facilitar el acceso al abdomen"
       ],
-      "duration": "25–40 minutos aprox.",
+      "duration": "25–40 min aprox.",
       "price": 780,
       "results": "Entrega inmediata de imágenes y video; reporte médico en 24 horas",
       "locations": [
         { "name": "Sucursal Central", "address": "Av. Reforma 222, Col. Juárez, CDMX", "availability": "Citas hoy disponibles", "available": true },
         { "name": "Sucursal Sur", "address": "Periférico Sur 4500, Col. Jardines del Pedregal, CDMX", "availability": "Disponible mañana", "available": true }
       ],
-      "images": ["https://images.unsplash.com/photo-1609220136736-443140cffec6?q=80&w=600&auto=format&fit=crop"]
+      "images": ["https://images.unsplash.com/photo-1609220136736-443140cffec6?q=40&w=300&auto=format&fit=crop"]
     },
     {
       "id": 9,
       "title": "Perfil Lipídico Completo",
       "category": "Laboratorio Clínico",
       "description": "Cuantificación de colesterol total, HDL, LDL, VLDL y triglicéridos para calcular el riesgo cardiovascular y guiar intervenciones preventivas o farmacológicas.",
-      "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=600&auto=format&fit=crop",
+      "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=40&w=300&auto=format&fit=crop",
       "full_description": "El Perfil Lipídico Completo es el estudio de referencia para la evaluación del riesgo cardiovascular según las guías de la Sociedad Europea de Cardiología (ESC/EAS 2019) y el ACC/AHA. Determina: colesterol total, colesterol HDL (cardioprotector), colesterol LDL calculado y directo, VLDL, triglicéridos, índice aterogénico (CT/HDL) y colesterol no-HDL. La combinación de estos valores permite clasificar el riesgo cardiovascular en bajo, moderado, alto y muy alto, y establecer metas terapéuticas precisas de LDL. Indicado en prevención primaria (>20 años cada 5 años) y seguimiento de pacientes en tratamiento hipolipemiante.",
       "preparation": [
-        "Ayuno de 9 a 12 horas (solo agua simple permitida)",
+        "Ayuno 9 a 12 horas",
         "Evitar consumo de alcohol las 72 horas anteriores — eleva artificialmente los triglicéridos",
         "No realizar ejercicio aeróbico intenso las 24 horas previas",
         "Mantener la dieta habitual los 3 días previos para que los resultados sean representativos",
         "Informar si toma estatinas, fibratos, ezetimiba u otros hipolipemiantes"
       ],
-      "duration": "10 minutos aprox.",
+      "duration": "10 min aprox.",
       "price": 480,
       "results": "24 horas",
       "locations": [
         { "name": "Sucursal Central", "address": "Av. Reforma 222, Col. Juárez, CDMX", "availability": "Sin cita necesaria", "available": true },
         { "name": "Sucursal Norte", "address": "Insurgentes Norte 1200, Col. Lindavista, CDMX", "availability": "Disponible hoy", "available": true }
       ],
-      "images": ["https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=600&auto=format&fit=crop"]
+      "images": ["https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=40&w=300&auto=format&fit=crop"]
     },
     {
       "id": 10,
       "title": "Examen General de Orina (EGO)",
       "category": "Laboratorio Clínico",
       "description": "Análisis físico, químico y microscópico de la orina para detectar infecciones urinarias, diabetes, enfermedad renal, proteinuria y alteraciones metabólicas.",
-      "image": "https://images.unsplash.com/photo-1582719471384-894fbb16e074?q=80&w=600&auto=format&fit=crop",
+      "image": "https://images.unsplash.com/photo-1582719471384-894fbb16e074?q=40&w=300&auto=format&fit=crop",
       "full_description": "El Examen General de Orina (EGO) es un estudio multicomponente que evalúa la muestra urinaria en tres fases: (1) Examen físico: color, aspecto, densidad y pH; (2) Examen químico dipstick: glucosa, proteínas, cetonas, bilirrubina, urobilinógeno, nitritos, leucocitos, eritrocitos y hemoglobina; (3) Examen microscópico del sedimento: células epiteliales, leucocitos, eritrocitos, cilindros, cristales y bacterias. Permite diagnosticar infección urinaria baja y alta, glomerulonefritis, síndrome nefrótico, glucosuria (tamizaje de diabetes), cetonuria (cetoacidosis) e insuficiencia renal.",
       "preparation": [
-        "Recolectar la primera orina de la mañana — es la más concentrada y representativa",
+        "Primera orina de la mañana — es la más concentrada y representativa",
         "Realizar limpieza genital con agua y jabón antes de la recolección",
         "Recolectar chorro medio: desechar el primer chorro, recolectar el intermedio en el frasco estéril proporcionado",
         "Entregar la muestra en menos de 2 horas tras la recolección",
         "Mujeres: evitar toma de muestra durante el período menstrual o los 3 días posteriores"
       ],
-      "duration": "5–10 minutos para la entrega de muestra",
+      "duration": "5–10 min",
       "price": 220,
-      "results": "Mismo día (2–4 horas)",
+      "results": "Mismo día",
       "locations": [
         { "name": "Sucursal Central", "address": "Av. Reforma 222, Col. Juárez, CDMX", "availability": "Sin cita necesaria", "available": true },
         { "name": "Sucursal Sur", "address": "Periférico Sur 4500, Col. Jardines del Pedregal, CDMX", "availability": "Disponible hoy", "available": true }
       ],
-      "images": ["https://images.unsplash.com/photo-1582719471384-894fbb16e074?q=80&w=600&auto=format&fit=crop"]
+      "images": ["https://images.unsplash.com/photo-1582719471384-894fbb16e074?q=40&w=300&auto=format&fit=crop"]
     },
     {
       "id": 11,
       "title": "Densitometría Ósea (DEXA)",
       "category": "Radiología e Imagen",
       "description": "Medición precisa de la densidad mineral ósea en columna lumbar y cadera mediante absorciometría de rayos X de energía dual (DEXA), estudio de referencia para diagnóstico de osteoporosis.",
-      "image": "https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?q=80&w=600&auto=format&fit=crop",
+      "image": "https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?q=40&w=300&auto=format&fit=crop",
       "full_description": "La Densitometría Ósea por DEXA (Dual-Energy X-ray Absorptiometry) es el método diagnóstico establecido por la OMS para clasificar la salud ósea. Mide la Densidad Mineral Ósea (DMO) en g/cm² en columna lumbar (L1-L4) y cadera total y cuello femoral, calculando el T-score (comparativo con adulto joven de mismo sexo) y Z-score (comparativo por edad). Un T-score ≤ -2.5 confirma osteoporosis; entre -1.0 y -2.5 indica osteopenia. Es esencial en mujeres postmenopáusicas, pacientes con corticoterapia crónica, hipogonadismo, hipertiroidismo y en la evaluación de fracturas por fragilidad. Radiación mínima: 1/10 de una radiografía de tórax.",
       "preparation": [
-        "No usar ropa con herrajes, broches metálicos ni cremalleras en el área lumbar y caderas",
+        "No usar ropa con herrajes",
         "Informar si se realizó recientemente un estudio con bario o medio de contraste (esperar 7 días)",
         "Suspender suplementos de calcio oral 24 horas antes del estudio",
         "Informar al médico sobre fracturas previas, cirugías de columna o prótesis de cadera",
         "No es necesario el ayuno"
       ],
-      "duration": "20–30 minutos aprox.",
+      "duration": "20–30 min aprox.",
       "price": 880,
       "results": "48 horas (reporte reumatológico con cálculo de riesgo FRAX®)",
       "locations": [
         { "name": "Sucursal Central", "address": "Av. Reforma 222, Col. Juárez, CDMX", "availability": "Citas hoy disponibles", "available": true }
       ],
-      "images": ["https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?q=80&w=600&auto=format&fit=crop"]
+      "images": ["https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?q=40&w=300&auto=format&fit=crop"]
     },
     {
       "id": 12,
       "title": "Panel Tiroideo (TSH, T3L, T4L)",
       "category": "Laboratorio Clínico",
       "description": "Determinación de TSH ultrasensible, T3 libre y T4 libre para diagnóstico preciso de hipotiroidismo, hipertiroidismo y seguimiento del tratamiento con levotiroxina.",
-      "image": "https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?q=80&w=600&auto=format&fit=crop",
+      "image": "https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?q=40&w=300&auto=format&fit=crop",
       "full_description": "El Panel Tiroideo completo evalúa el eje hipófisis-tiroides mediante tres determinaciones complementarias: (1) TSH ultrasensible (3ª generación, rango 0.27–4.2 mIU/L): marcador más sensible de disfunción tiroidea; (2) T4 libre (tiroxina libre): refleja la producción hormonal activa de la glándula; (3) T3 libre (triyodotironina activa): crucial en el diagnóstico de hipertiroidismo por T3 y en el seguimiento de pacientes con bocio multinodular. Juntos permiten diferenciar hipotiroidismo primario vs central, hipertiroidismo franco vs subclínico, y monitorizar la dosis de levotiroxina en pacientes hipotiroideos.",
       "preparation": [
-        "No se requiere ayuno de manera estricta (el ayuno no modifica significativamente los niveles tiroideos)",
+        "No se requiere ayuno",
         "Si toma levotiroxina (Eutirox®): tomarlo DESPUÉS de la extracción de sangre, no antes, para evitar pico artificial de T4L",
         "Informar si toma amiodarona, litio, glucocorticoides, anticonvulsivantes o biotina (interfieren con la determinación)",
         "Evitar suplementos con biotina (vitamina B7) 72 horas antes — pueden generar resultados falsamente alterados",
         "Si está embarazada, indicarlo para aplicar rangos de referencia específicos por trimestre"
       ],
-      "duration": "10 minutos aprox.",
+      "duration": "10 min aprox.",
       "price": 520,
       "results": "24–48 horas",
       "locations": [
         { "name": "Sucursal Central", "address": "Av. Reforma 222, Col. Juárez, CDMX", "availability": "Sin cita necesaria", "available": true },
         { "name": "Sucursal Sur", "address": "Periférico Sur 4500, Col. Jardines del Pedregal, CDMX", "availability": "Disponible hoy", "available": true }
       ],
-      "images": ["https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?q=80&w=600&auto=format&fit=crop"]
-    },
-    {
-      "id": 13,
-      "title": "Colposcopia con Video",
-      "category": "Ginecología",
-      "description": "Inspección magnificada del cuello uterino, vagina y vulva mediante colposcopio de alta definición con video, para identificar y biopsiar lesiones sospechosas.",
-      "image": "https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?q=80&w=600&auto=format&fit=crop",
-      "full_description": "La Colposcopia es el procedimiento de segunda línea tras un Papanicolaou anormal (ASCUS-H, LEIBG, LEIAG o ASC-H). Utiliza un colposcopio binocular magnificado (7.5×–30×) con fuente de luz halógena y filtro verde para visualizar la vascularización. Se aplica ácido acético al 3–5% para identificar epitelio acetoblanco (lesiones intraepiteliales) y solución de Lugol (Prueba de Schiller) para delimitar zonas yodonegativas. Si se identifican lesiones sospechosas, se toma biopsia dirigida en la misma sesión para análisis histopatológico. Sistema de clasificación: Nomenclatura del Congreso Mundial de Patología Cervical (IFCPC 2011).",
-      "preparation": [
-        "Programar el estudio fuera del período menstrual",
-        "Abstinencia sexual 48 horas antes",
-        "No usar duchas vaginales, óvulos ni cremas intravaginales las 48 horas previas",
-        "Si se anticipa biopsia: tomar un analgésico (ibuprofeno 400 mg) 1 hora antes, según tolerancia",
-        "Traer el resultado del Papanicolaou que motivó el estudio",
-        "Puede experimentar leve sangrado o flujo café post-procedimiento (es normal)"
-      ],
-      "duration": "20–35 minutos aprox.",
-      "price": 1050,
-      "results": "Resultado de biopsia en 5–7 días hábiles; video e informe colposcópico en 48 horas",
-      "locations": [
-        { "name": "Sucursal Central", "address": "Av. Reforma 222, Col. Juárez, CDMX", "availability": "Citas disponibles esta semana", "available": true }
-      ],
-      "images": ["https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?q=80&w=600&auto=format&fit=crop"]
-    },
-    {
-      "id": 14,
-      "title": "Prueba de Esfuerzo (Ergometría)",
-      "category": "Cardiología",
-      "description": "Evaluación cardiaca en condiciones de estrés físico controlado en banda sin fin o bicicleta ergométrica, con monitoreo continuo de ECG de 12 derivaciones y tensión arterial.",
-      "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=600&auto=format&fit=crop",
-      "full_description": "La Prueba de Esfuerzo (PE) o Ergometría es el estudio de primera línea para la detección de cardiopatía isquémica en pacientes con dolor torácico de esfuerzo, evaluación postinfarto, valoración funcional preoperatoria y prescripción de ejercicio en cardiopatías. Se realiza con protocolo Bruce modificado en banda rodante o protocolo Ramp en bicicleta ergométrica. Se monitorean en tiempo real: ECG de 12 derivaciones, frecuencia cardíaca, tensión arterial, saturación de oxígeno y percepción de esfuerzo (Escala de Borg). Electrocardiógrafo de alta resolución con análisis de segmento ST asistido por software. Criterios de positividad: depresión del ST ≥ 1 mm horizontal o descendente en dos derivaciones contiguas.",
-      "preparation": [
-        "Ayuno ligero de 2 a 3 horas (evitar comida copiosa; puede tomar agua)",
-        "Acudir con ropa deportiva cómoda y calzado deportivo estable",
-        "No suspender betabloqueadores ni antianginosos sin indicación médica expresa (afectan la interpretación solo si el médico lo indica)",
-        "Evitar cafeína (café, té, refresco de cola) las 4 horas previas",
-        "Informar cualquier dolor en reposo, angina inestable o síntoma cardíaco reciente",
-        "Traer ECG de reposo reciente si cuenta con él"
-      ],
-      "duration": "50–70 minutos aprox. (incluye preparación, estudio y recuperación)",
-      "price": 1350,
-      "results": "Reporte médico en 48 horas",
-      "locations": [
-        { "name": "Sucursal Central", "address": "Av. Reforma 222, Col. Juárez, CDMX", "availability": "Citas hoy disponibles", "available": true }
-      ],
-      "images": ["https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=600&auto=format&fit=crop"]
-    },
-    {
-      "id": 15,
-      "title": "Marcadores Tumorales Séricos",
-      "category": "Laboratorio Clínico",
-      "description": "Determinación sérica de marcadores oncológicos específicos (PSA, CEA, CA-125, AFP, CA 19-9) para apoyo diagnóstico y monitoreo de respuesta al tratamiento en oncología.",
-      "image": "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=600&auto=format&fit=crop",
-      "full_description": "Los Marcadores Tumorales son glicoproteínas, hormonas o enzimas producidas por células neoplásicas o por tejido normal en respuesta a un tumor. Su determinación sérica mediante inmunoensayo de electroquimioluminiscencia (ECLIA) de alta sensibilidad incluye: PSA total y libre (próstata), CEA (colorrectal, pulmón, mama), CA 125 (ovario), AFP (hepatocarcinoma, células germinales), CA 19-9 (páncreas, vías biliares), CA 15-3 (mama), β-HCG (trofoblástico), LDH (linfomas, tumores germinales) y NSE (cáncer pulmonar de células pequeñas). Importante: son indicadores de apoyo, no diagnósticos solos; siempre se interpretan en contexto clínico e imagen.",
-      "preparation": [
-        "Se recomienda ayuno de 4 a 8 horas (aunque no es estrictamente necesario para todos los marcadores)",
-        "Para PSA: abstinencia sexual y no realizar tacto rectal ni cateterismo vesical las 72 horas previas",
-        "Para PSA: evitar ciclismo, equitación y ejercicio de alto impacto 48 horas antes (elevan PSA mecánicamente)",
-        "Informar tratamientos oncológicos activos (quimioterapia, radioterapia) o recientes",
-        "Indicar fecha del último ciclo menstrual (relevante para CA-125 y β-HCG)"
-      ],
-      "duration": "10–20 minutos aprox.",
-      "price": 980,
-      "results": "48–72 horas",
-      "locations": [
-        { "name": "Sucursal Central", "address": "Av. Reforma 222, Col. Juárez, CDMX", "availability": "Citas hoy disponibles", "available": true },
-        { "name": "Sucursal Norte", "address": "Insurgentes Norte 1200, Col. Lindavista, CDMX", "availability": "Disponible esta semana", "available": true }
-      ],
-      "images": ["https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=600&auto=format&fit=crop"]
-    },
-    {
-      "id": 16,
-      "title": "Holter ECG 24 Horas",
-      "category": "Cardiología",
-      "description": "Monitoreo electrocardiográfico ambulatorio continuo de 24 horas con análisis de más de 100,000 latidos para detección de arritmias intermitentes y correlación síntoma-ritmo.",
-      "image": "https://images.unsplash.com/photo-1504439468489-c8920d796a29?q=80&w=600&auto=format&fit=crop",
-      "full_description": "El ECG Holter de 24 horas es el estudio de elección para investigar síntomas intermitentes relacionados con el ritmo cardíaco: palpitaciones, mareo, síncope, presíncope y disnea episódica. Utiliza un grabador digital de 3 canales que registra de forma continua todos los latidos durante 24 horas mientras el paciente realiza sus actividades habituales. El análisis computarizado posterior identifica: arritmias supraventriculares (fibrilación auricular paroxística, flutter, TPSV, WPW), arritmias ventriculares (extrasístoles, TV no sostenida), bloqueos AV intermitentes, pausas sinusales y variabilidad de la frecuencia cardíaca (HRV) como indicador autonómico. Incluye correlación diario de síntomas-actividad con el registro electrocardiográfico.",
-      "preparation": [
-        "Ducha previa al colocado de electrodos — no bañarse durante las 24 horas que porte el dispositivo",
-        "Usar ropa holgada que permita ocultar el grabador (camisa de botones)",
-        "Mantener la actividad diaria habitual para que el registro sea representativo",
-        "Llevar un diario de síntomas: anotar hora exacta de palpitaciones, mareos, etc., y actividad realizada en ese momento",
-        "No alejarse más de 10 metros de microondas, imanes industriales o escáneres de aeropuerto",
-        "Acudir a devolver el equipo exactamente a la hora indicada — 24 horas tras la colocación"
-      ],
-      "duration": "24 horas de registro",
-      "price": 1650,
-      "results": "48–72 horas (análisis computerizado + reporte cardiológico)",
-      "locations": [
-        { "name": "Sucursal Central", "address": "Av. Reforma 222, Col. Juárez, CDMX", "availability": "Citas hoy disponibles", "available": true }
-      ],
-      "images": ["https://images.unsplash.com/photo-1504439468489-c8920d796a29?q=80&w=600&auto=format&fit=crop"]
-    },
-    {
-      "id": 17,
-      "title": "Resonancia Magnética Abdominal",
-      "category": "Radiología e Imagen",
-      "description": "RM multiparamétrica del abdomen para evaluación de hígado, vías biliares, páncreas, bazo, riñones y retroperitoneo con resolución de tejido blando superior a cualquier otra modalidad.",
-      "image": "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&w=600&auto=format&fit=crop",
-      "full_description": "La RM Abdominal es el método de imagen de mayor resolución de contraste para el estudio de órganos sólidos abdominales. Su protocolo incluye secuencias T1 en fase y fuera de fase (caracterización de grasa intracelular en esteatosis hepática y adenomas), T2 con supresión grasa (lesiones hepáticas, biliares y pancreáticas), MRCP (colangiografía no invasiva: cálculos biliares, estenosis), difusión (DWI) para detección de lesiones focales, y secuencias dinámicas post-gadolinio en tres fases (arterial, portal y tardía) para la caracterización de hemangiomas, hiperplasias nodulares focales, hepatocarcinoma y metástasis. Reemplaza con ventaja al ultrasonido y TAC en el estudio de la enfermedad hepática difusa y la patología pancreática.",
-      "preparation": [
-        "Ayuno estricto de 6 horas (mejora la calidad de imagen biliopancreática y reducción de artefactos intestinales)",
-        "Si se administrará contraste (gadolinio): verificar función renal (creatinina) en pacientes con riesgo de nefropatía",
-        "Retirar TODOS los objetos metálicos: aretes, perforaciones, cinturones, llaves",
-        "Declarar: marcapasos, stents coronarios, clips vasculares, prótesis metálicas, DIUS medicado (Mirena)",
-        "Vestuario: usar bata proporcionada en el centro o ropa sin herrajes ni cremalleras metálicas",
-        "El estudio puede durar 45–80 minutos; prepararse para permanecer inmóvil en el equipo"
-      ],
-      "duration": "45–80 minutos aprox.",
-      "price": 3400,
-      "results": "24–48 horas (reporte médico completo)",
-      "locations": [
-        { "name": "Sucursal Central", "address": "Av. Reforma 222, Col. Juárez, CDMX", "availability": "Citas disponibles esta semana", "available": true }
-      ],
-      "images": ["https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&w=600&auto=format&fit=crop"]
-    },
-    {
-      "id": 18,
-      "title": "Check-up Ejecutivo Básico",
-      "category": "Chequeos Preventivos",
-      "description": "Programa de evaluación preventiva integral diseñado para profesionales activos: incluye laboratorio, imagen, valoración médica y entrega de resultados con asesoría nutricional.",
-      "image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=600&auto=format&fit=crop",
-      "full_description": "El Check-up Ejecutivo Básico está diseñado para personas activas que requieren una evaluación preventiva sin interrumpir su agenda. Protocolo optimizado que incluye: Biometría Hemática, Química Sanguínea 12 elementos, Glucosa, Perfil Lipídico, Función tiroidea (TSH), Examen General de Orina, Electrocardiograma de reposo, Radiografía de tórax PA, Toma de presión arterial y antropometría (IMC, composición corporal básica), además de una entrevista médica de 20 minutos con entrega comentada de resultados. Todo en un máximo de 90 minutos. Recomendado anualmente a partir de los 35 años.",
-      "preparation": [
-        "Ayuno de 8 a 12 horas (se realizarán estudios de laboratorio en ayuno)",
-        "Traer historial médico personal, lista de medicamentos actuales y estudios previos relevantes",
-        "Usar ropa sin herrajes y dos piezas para facilitar estudios de imagen y ECG",
-        "Reservar 90 minutos de su agenda para completar todos los estudios sin prisa",
-        "El cheque disponible en horario matutino de lunes a viernes (previa cita)"
-      ],
-      "duration": "60–90 minutos aprox.",
-      "price": 2800,
-      "results": "Resultados de laboratorio en 24 horas; entrevista de entrega incluida al día siguiente",
-      "locations": [
-        { "name": "Sucursal Central", "address": "Av. Reforma 222, Col. Juárez, CDMX", "availability": "Citas hoy disponibles", "available": true },
-        { "name": "Sucursal Norte", "address": "Insurgentes Norte 1200, Col. Lindavista, CDMX", "availability": "Disponible esta semana", "available": true }
-      ],
-      "images": ["https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=600&auto=format&fit=crop"]
+      "images": ["https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?q=40&w=300&auto=format&fit=crop"]
     }
   ]
 }

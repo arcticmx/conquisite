@@ -21,7 +21,6 @@ function createPackCard(s, { extraClass = '', linkText = 'Ver paquete' } = {}) {
     <img
       alt="${s.title}"
       src="${s.image}"
-      loading="lazy"
       class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
       onload="this.previousElementSibling.style.display='none'"
     />

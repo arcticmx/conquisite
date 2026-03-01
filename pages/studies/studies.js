@@ -20,26 +20,25 @@ async function loadComponentTo(id, path){
 }
 
 async function init(){
-  await loadComponentTo('component-header','../../components/header.html');
-  await loadComponentTo('component-studies-hero','hero.html');
-  await loadComponentTo('component-studies-content','list.html');
-  await loadComponentTo('component-footer','../../components/footer.html');
+  // Carga componentes y JSON en paralelo para evitar cascada de requests
+  await Promise.all([
+    loadComponentTo('component-header','../../components/header.html'),
+    loadComponentTo('component-studies-hero','hero.html'),
+    loadComponentTo('component-studies-content','list.html'),
+    loadComponentTo('component-footer','../../components/footer.html'),
+    fetchStudies(),
+  ]);
 
-  // Resolve data-href links now that header/footer are in the DOM
   rewriteNavHrefs('../../');
 
-  // Dark mode sync (desactivado — descomentar para re-habilitar)
-  // if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  //   document.documentElement.classList.add('dark');
-  // }
-  // window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-  //   if (event.matches) document.documentElement.classList.add('dark');
-  //   else document.documentElement.classList.remove('dark');
-  // });
-
-  // nav.js cargado como script estático — invocar helpers directamente
   if(typeof window.setupMobileMenu === 'function') window.setupMobileMenu();
   if(typeof window.activateNavLinks === 'function') window.activateNavLinks();
+
+  // Renderizar listado ahora que componentes y datos ya están listos
+  renderCategories();
+  setupSearch();
+  setupSort();
+  applyFilters();
 }
 
 // --- Studies dynamic rendering (search, categories, pagination) ---
@@ -298,19 +297,5 @@ function setupSort(){
     applyFilters();
   });
 }
-
-async function initStudies(){
-  await fetchStudies();
-  renderCategories();
-  setupSearch();
-  setupSort();
-  applyFilters();
-}
-
-// kick off after components load
-document.addEventListener('DOMContentLoaded', ()=>{
-  // small timeout to ensure component-studies-content exists
-  setTimeout(()=>{ initStudies(); }, 60);
-});
 
 document.addEventListener('DOMContentLoaded', init);

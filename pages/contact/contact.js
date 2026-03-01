@@ -1,3 +1,11 @@
+/** Resolve [data-href] links relative to root. */
+function rewriteNavHrefs(root) {
+  document.querySelectorAll('[data-href]').forEach(el => {
+    const dh = el.getAttribute('data-href');
+    el.setAttribute('href', dh === '' ? (root || './') : root + dh);
+  });
+}
+
 async function loadComponentTo(id, path){
   try{
     const res = await fetch(path);
@@ -13,7 +21,9 @@ async function init(){
   await loadComponentTo('component-contacto','content.html');
   await loadComponentTo('component-footer','../../components/footer.html');
 
-  // dark mode sync
+  // Resolve data-href links now that header/footer are in the DOM
+  rewriteNavHrefs('../../');
+
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     document.documentElement.classList.add('dark');
   }
@@ -22,13 +32,9 @@ async function init(){
     else document.documentElement.classList.remove('dark');
   });
 
-  // ensure nav helper exists (fallback) and activate nav
-  // ensure nav helper is loaded and activate nav
-  if(!window.activateNavLinks){
-    const s = document.createElement('script'); s.src = '../../assets/js/nav.js'; s.async = true; document.body.appendChild(s);
-    await new Promise(r=>setTimeout(r,100));
-  }
-  if(typeof activateNavLinks === 'function') activateNavLinks();
+  // nav.js cargado como script estático — invocar helpers directamente
+  if(typeof window.setupMobileMenu === 'function') window.setupMobileMenu();
+  if(typeof window.activateNavLinks === 'function') window.activateNavLinks();
 
   // Form handling: simple client-side validate + success message
   const form = document.getElementById('contact-form');

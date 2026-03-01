@@ -1,3 +1,14 @@
+// Detail page is in same folder when used from studies listing
+window.STUDY_DETAIL_PATH = 'detail.html';
+
+/** Resolve [data-href] links relative to root. */
+function rewriteNavHrefs(root) {
+  document.querySelectorAll('[data-href]').forEach(el => {
+    const dh = el.getAttribute('data-href');
+    el.setAttribute('href', dh === '' ? (root || './') : root + dh);
+  });
+}
+
 async function loadComponentTo(id, path){
   try{
     const res = await fetch(path);
@@ -14,7 +25,9 @@ async function init(){
   await loadComponentTo('component-studies-content','list.html');
   await loadComponentTo('component-footer','../../components/footer.html');
 
-  // Dark mode sync (same behaviour as main)
+  // Resolve data-href links now that header/footer are in the DOM
+  rewriteNavHrefs('../../');
+
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     document.documentElement.classList.add('dark');
   }
@@ -23,18 +36,9 @@ async function init(){
     else document.documentElement.classList.remove('dark');
   });
 
-  // Activate nav links after header has been injected
-  // Ensure nav helper is loaded and activate nav
-  // Ensure navigation helper and mobile menu script are present.
-  if(!window.activateNavLinks || !window.setupMobileMenu){
-    const s = document.createElement('script'); s.src = '../../assets/js/nav.js'; s.async = true; document.body.appendChild(s);
-    for(let i=0;i<50 && !(window.activateNavLinks && window.setupMobileMenu);i++){ await new Promise(r=>setTimeout(r,50)); }
-  }
-  if(typeof activateNavLinks === 'function') activateNavLinks();
-  if(typeof window.setupMobileMenu === 'function'){
-    try{ window.setupMobileMenu(); }catch(e){ console.warn('setupMobileMenu failed', e); }
-  }
-  // end nav init
+  // nav.js cargado como script estático — invocar helpers directamente
+  if(typeof window.setupMobileMenu === 'function') window.setupMobileMenu();
+  if(typeof window.activateNavLinks === 'function') window.activateNavLinks();
 }
 
 // --- Studies dynamic rendering (search, categories, pagination) ---
@@ -291,20 +295,5 @@ document.addEventListener('DOMContentLoaded', ()=>{
   // small timeout to ensure component-studies-content exists
   setTimeout(()=>{ initStudies(); }, 60);
 });
-
-function activateNavLinks(){
-  const current = (location.pathname.split('/').pop() || 'index.html');
-  document.querySelectorAll('nav a[href]').forEach(a=>{
-    const href = a.getAttribute('href') || '';
-    const target = href.split('/').pop() || '';
-    if(target === current || (target === '' && current === 'index.html')){
-      a.classList.add('text-secondary','font-bold');
-      a.setAttribute('aria-current','page');
-    } else {
-      a.classList.remove('text-secondary','font-bold');
-      a.removeAttribute('aria-current');
-    }
-  });
-}
 
 document.addEventListener('DOMContentLoaded', init);

@@ -1,8 +1,8 @@
 /**
  * pack-card.js — Shared factory for package image cards (desktop grid).
- * Used by packages.js (index.html) and paquetes.js (paquetes.html).
+ * Used by home-pack.js (index.html) and pack.js (pack.html).
  *
- * @param {Object} s          Package object from packages.json
+ * @param {Object} s          Package object from pack.json
  * @param {Object} [opts]
  * @param {string} [opts.extraClass]  Extra Tailwind classes added to the root element (e.g. sizing)
  * @param {string} [opts.linkText]    CTA label (default: "Ver paquete")
@@ -32,7 +32,7 @@ function createPackCard(s, { extraClass = '', linkText = 'Ver paquete' } = {}) {
       <p class="text-slate-200 text-xs line-clamp-2 opacity-80 mb-2">${s.description || ''}</p>
       <div class="flex items-center gap-3">
         <a
-          href="pack-detail.html?id=${encodeURIComponent(s.id)}"
+          href="/conqui/pages/pack/detail.html?id=${encodeURIComponent(s.id)}"
           class="text-white text-sm font-bold flex items-center gap-1 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-75"
         >${linkText} <span class="material-icons-outlined text-sm">arrow_forward</span></a>
         ${price}
@@ -41,7 +41,7 @@ function createPackCard(s, { extraClass = '', linkText = 'Ver paquete' } = {}) {
   `;
 
   card.addEventListener('click', () => {
-    location.href = `pack-detail.html?id=${encodeURIComponent(s.id)}`;
+    location.href = `/conqui/pages/pack/detail.html?id=${encodeURIComponent(s.id)}`;
   });
 
   return card;

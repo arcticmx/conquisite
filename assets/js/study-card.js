@@ -1,6 +1,6 @@
 /**
  * study-card.js — Shared factory for study image cards.
- * Used by services.js (index.html) and estudios.js (estudios.html).
+ * Used by home-studies.js (index.html) and studies.js (studies.html).
  *
  * @param {Object} s          Study object from studies.json
  * @param {Object} [opts]
@@ -31,7 +31,7 @@ function createStudyCard(s, { extraClass = '', linkText = 'Ver estudio' } = {}) 
       <p class="text-slate-200 text-xs line-clamp-2 opacity-80 mb-2">${s.description || ''}</p>
       <div class="flex items-center gap-3">
         <a
-          href="study-detail.html?id=${encodeURIComponent(s.id)}"
+          href="/conqui/pages/studies/detail.html?id=${encodeURIComponent(s.id)}"
           class="text-white text-sm font-bold flex items-center gap-1 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-75"
         >${linkText} <span class="material-icons-outlined text-sm">arrow_forward</span></a>
         ${price}
@@ -40,7 +40,7 @@ function createStudyCard(s, { extraClass = '', linkText = 'Ver estudio' } = {}) 
   `;
 
   card.addEventListener('click', () => {
-    window.location.href = `study-detail.html?id=${encodeURIComponent(s.id)}`;
+    window.location.href = `/conqui/pages/studies/detail.html?id=${encodeURIComponent(s.id)}`;
   });
 
   return card;

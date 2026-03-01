@@ -1,17 +1,19 @@
 // Define activateNavLinks globally if not already defined
 if (typeof window.activateNavLinks !== 'function') {
   window.activateNavLinks = function(){
-    const current = (location.pathname.split('/').pop() || 'index.html');
-    document.querySelectorAll('nav a[href]').forEach(a=>{
+    const path = location.pathname;
+    document.querySelectorAll('nav a[href]').forEach(a => {
       const href = a.getAttribute('href') || '';
-      const target = href.split('/').pop() || '';
-      if(target === current || (target === '' && current === 'index.html')){
-        a.classList.add('text-secondary','font-bold');
-        a.setAttribute('aria-current','page');
-      } else {
-        a.classList.remove('text-secondary','font-bold');
-        a.removeAttribute('aria-current');
+      let active = false;
+      if (href === '/conqui/' || href === '/conqui/index.html') {
+        active = path === '/conqui/' || path === '/conqui/index.html';
+      } else if (href.length > 1) {
+        active = path.startsWith(href);
       }
+      a.classList.toggle('text-secondary', active);
+      a.classList.toggle('font-bold', active);
+      if (active) a.setAttribute('aria-current', 'page');
+      else a.removeAttribute('aria-current');
     });
     // initialize mobile menu if present (header may be injected dynamically)
     try{

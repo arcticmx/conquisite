@@ -1,6 +1,6 @@
 /**
  * pack-detail.js
- * Carga y renderiza la página de detalle de un paquete desde packages.json
+ * Carga y renderiza la página de detalle de un paquete desde pack.json
  * basado en el parámetro ?id= de la URL.
  */
 (async function () {
@@ -37,8 +37,8 @@
   if (!id) return;
 
   try {
-    const res = await fetch('assets/data/packages.json');
-    if (!res.ok) throw new Error('packages.json no encontrado');
+    const res = await fetch('../../assets/data/pack.json');
+    if (!res.ok) throw new Error('pack.json no encontrado');
     const json = await res.json();
     const pkg = (json.packages || []).find((x) => String(x.id) === String(id));
     if (!pkg) return;

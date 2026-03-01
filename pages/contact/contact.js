@@ -9,9 +9,9 @@ async function loadComponentTo(id, path){
 }
 
 async function init(){
-  await loadComponentTo('component-header','components/header.html');
-  await loadComponentTo('component-contacto','components/contacto.html');
-  await loadComponentTo('component-footer','components/footer.html');
+  await loadComponentTo('component-header','../../components/header.html');
+  await loadComponentTo('component-contacto','content.html');
+  await loadComponentTo('component-footer','../../components/footer.html');
 
   // dark mode sync
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -25,7 +25,7 @@ async function init(){
   // ensure nav helper exists (fallback) and activate nav
   // ensure nav helper is loaded and activate nav
   if(!window.activateNavLinks){
-    const s = document.createElement('script'); s.src = 'assets/js/nav.js'; s.async = true; document.body.appendChild(s);
+    const s = document.createElement('script'); s.src = '../../assets/js/nav.js'; s.async = true; document.body.appendChild(s);
     await new Promise(r=>setTimeout(r,100));
   }
   if(typeof activateNavLinks === 'function') activateNavLinks();

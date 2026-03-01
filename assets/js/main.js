@@ -2,7 +2,7 @@ const components = [
   'header',
   'hero',
   'services',
-  'packages',
+  'pack',
   'branches',
   'about',
   'credentials',
@@ -102,16 +102,16 @@ async function init(){
   // Load services renderer if the services placeholder exists
   if(document.getElementById('component-services') && document.getElementById('services-grid')){
     if(!window.initServices){
-      const s = document.createElement('script'); s.src = 'assets/js/services.js'; s.async = true; document.body.appendChild(s);
+      const s = document.createElement('script'); s.src = 'assets/js/home-studies.js'; s.async = true; document.body.appendChild(s);
       for(let i=0;i<50 && !window.initServices;i++){ await new Promise(r=>setTimeout(r,50)); }
     }
     if(typeof initServices === 'function') initServices();
   }
 
   // Load packages renderer if the packages placeholder exists
-  if(document.getElementById('component-packages') && document.getElementById('packages-grid')){
+  if(document.getElementById('component-pack') && document.getElementById('packages-grid')){
     if(!window.initPackages){
-      const s2 = document.createElement('script'); s2.src = 'assets/js/packages.js'; s2.async = true; document.body.appendChild(s2);
+      const s2 = document.createElement('script'); s2.src = 'assets/js/home-pack.js'; s2.async = true; document.body.appendChild(s2);
       for(let i=0;i<50 && !window.initPackages;i++){ await new Promise(r=>setTimeout(r,50)); }
     }
     if(typeof initPackages === 'function') initPackages();
@@ -119,17 +119,19 @@ async function init(){
 }
 
 function activateNavLinks(){
-  const current = (location.pathname.split('/').pop() || 'index.html');
-  document.querySelectorAll('nav a[href]').forEach(a=>{
+  const path = location.pathname;
+  document.querySelectorAll('nav a[href]').forEach(a => {
     const href = a.getAttribute('href') || '';
-    const target = href.split('/').pop() || '';
-    if(target === current || (target === '' && current === 'index.html')){
-      a.classList.add('text-secondary','font-bold');
-      a.setAttribute('aria-current','page');
-    } else {
-      a.classList.remove('text-secondary','font-bold');
-      a.removeAttribute('aria-current');
+    let active = false;
+    if (href === '/conqui/' || href === '/conqui/index.html') {
+      active = path === '/conqui/' || path === '/conqui/index.html';
+    } else if (href.length > 1) {
+      active = path.startsWith(href);
     }
+    a.classList.toggle('text-secondary', active);
+    a.classList.toggle('font-bold', active);
+    if (active) a.setAttribute('aria-current', 'page');
+    else a.removeAttribute('aria-current');
   });
 }
 

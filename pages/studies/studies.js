@@ -9,10 +9,10 @@ async function loadComponentTo(id, path){
 }
 
 async function init(){
-  await loadComponentTo('component-header','components/header.html');
-  await loadComponentTo('component-studies-hero','components/studies-hero.html');
-  await loadComponentTo('component-studies-content','components/studies-list.html');
-  await loadComponentTo('component-footer','components/footer.html');
+  await loadComponentTo('component-header','../../components/header.html');
+  await loadComponentTo('component-studies-hero','hero.html');
+  await loadComponentTo('component-studies-content','list.html');
+  await loadComponentTo('component-footer','../../components/footer.html');
 
   // Dark mode sync (same behaviour as main)
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -27,7 +27,7 @@ async function init(){
   // Ensure nav helper is loaded and activate nav
   // Ensure navigation helper and mobile menu script are present.
   if(!window.activateNavLinks || !window.setupMobileMenu){
-    const s = document.createElement('script'); s.src = 'assets/js/nav.js'; s.async = true; document.body.appendChild(s);
+    const s = document.createElement('script'); s.src = '../../assets/js/nav.js'; s.async = true; document.body.appendChild(s);
     for(let i=0;i<50 && !(window.activateNavLinks && window.setupMobileMenu);i++){ await new Promise(r=>setTimeout(r,50)); }
   }
   if(typeof activateNavLinks === 'function') activateNavLinks();
@@ -47,7 +47,7 @@ let currentSort = 'relevance';
 
 async function fetchStudies(){
   try{
-    const res = await fetch('assets/data/studies.json');
+    const res = await fetch('../../assets/data/studies.json');
     const json = await res.json();
     studiesData = (json.studies || []).map((s,idx)=> ({...s, __index: idx}));
     filtered = studiesData.slice();
@@ -170,7 +170,7 @@ function renderGrid(){
           </div>
           <div class="px-4 pb-4 flex items-center justify-between">
             ${s.price ? `<span class="text-lg font-bold text-primary">$${Number(s.price).toLocaleString('es-MX')} <span class="text-xs font-normal text-slate-400">MXN</span></span>` : '<span></span>'}
-            <a href="study-detail.html?id=${encodeURIComponent(s.id)}" class="inline-flex items-center gap-1 bg-primary text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+            <a href="detail.html?id=${encodeURIComponent(s.id)}" class="inline-flex items-center gap-1 bg-primary text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
               Ver estudio <span class="material-icons-outlined text-sm">arrow_forward</span>
             </a>
           </div>

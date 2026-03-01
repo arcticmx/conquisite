@@ -9,9 +9,9 @@ async function loadComponentTo(id, path){
 }
 
 async function init(){
-  await loadComponentTo('component-header','components/header.html');
-  await loadComponentTo('component-nosotros','components/nosotros.html');
-  await loadComponentTo('component-footer','components/footer.html');
+  await loadComponentTo('component-header','../../components/header.html');
+  await loadComponentTo('component-nosotros','content.html');
+  await loadComponentTo('component-footer','../../components/footer.html');
 
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     document.documentElement.classList.add('dark');
@@ -24,7 +24,7 @@ async function init(){
   // activate nav
   // ensure nav helper is loaded and activate nav
   if(!window.activateNavLinks){
-    const s = document.createElement('script'); s.src = 'assets/js/nav.js'; s.async = true; document.body.appendChild(s);
+    const s = document.createElement('script'); s.src = '../../assets/js/nav.js'; s.async = true; document.body.appendChild(s);
     await new Promise(r=>setTimeout(r,100));
   }
   if(typeof activateNavLinks === 'function') activateNavLinks();
@@ -41,7 +41,7 @@ let _nc = { images: [], current: 0, timer: null, transitioning: false };
 async function initNosotrosCarousel(){
   // fetch images
   try{
-    const res = await fetch('assets/data/nosotros-images.json');
+    const res = await fetch('../../assets/data/nosotros-images.json');
     const json = await res.json();
     _nc.images = json.images || [];
   }catch(e){

@@ -9,10 +9,10 @@ async function loadComponentTo(id, path){
 }
 
 async function init(){
-  await loadComponentTo('component-header','components/header.html');
-  await loadComponentTo('component-packages-hero','components/packages-hero.html');
-  await loadComponentTo('component-packages-content','components/packages-list.html');
-  await loadComponentTo('component-footer','components/footer.html');
+  await loadComponentTo('component-header','../../components/header.html');
+  await loadComponentTo('component-packages-hero','hero.html');
+  await loadComponentTo('component-packages-content','list.html');
+  await loadComponentTo('component-footer','../../components/footer.html');
 
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     document.documentElement.classList.add('dark');
@@ -24,7 +24,7 @@ async function init(){
 
   // ensure nav helper is loaded and activate nav
   if(!window.activateNavLinks){
-    const s = document.createElement('script'); s.src = 'assets/js/nav.js'; s.async = true; document.body.appendChild(s);
+    const s = document.createElement('script'); s.src = '../../assets/js/nav.js'; s.async = true; document.body.appendChild(s);
     await new Promise(r=>setTimeout(r,100));
   }
   if(typeof activateNavLinks === 'function') activateNavLinks();
@@ -40,12 +40,12 @@ let currentSort = 'relevance';
 
 async function fetchPackages(){
   try{
-    const res = await fetch('assets/data/packages.json');
+    const res = await fetch('../../assets/data/pack.json');
     const json = await res.json();
     packagesData = (json.packages || []).map((s,idx)=> ({...s, __index: idx}));
     filtered = packagesData.slice();
   }catch(e){
-    console.warn('No se pudo cargar packages.json', e);
+    console.warn('No se pudo cargar pack.json', e);
     packagesData = [];
     filtered = [];
   }
@@ -185,7 +185,7 @@ function renderGrid(){
           </div>
           <div class="px-4 pb-4 flex items-center justify-between">
             <span class="text-lg font-bold text-primary">$${Number(s.price||0).toLocaleString('es-MX')} <span class="text-xs font-normal text-slate-400">MXN</span></span>
-            <a href="pack-detail.html?id=${s.id}" class="inline-flex items-center gap-1 bg-primary text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+            <a href="detail.html?id=${s.id}" class="inline-flex items-center gap-1 bg-primary text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
               Ver paquete <span class="material-icons-outlined text-sm">arrow_forward</span>
             </a>
           </div>

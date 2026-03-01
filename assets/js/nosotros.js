@@ -35,116 +35,123 @@ async function init(){
 
 document.addEventListener('DOMContentLoaded', init);
 
-// --- Carousel logic for Nosotros ---
-let nosotrosImages = [];
-let nosotrosIndex = 0;
-let nosotrosInterval = null;
+// --- Carousel Nosotros ---
+let _nc = { images: [], current: 0, timer: null, transitioning: false };
 
-async function fetchNosotrosImages(){
+async function initNosotrosCarousel(){
+  // fetch images
   try{
     const res = await fetch('assets/data/nosotros-images.json');
     const json = await res.json();
-    nosotrosImages = json.images || [];
+    _nc.images = json.images || [];
   }catch(e){
-    console.warn('No se pudieron cargar las imágenes del carousel', e);
-    nosotrosImages = [];
+    console.warn('nosotros-images.json no disponible', e);
   }
-}
+  if(_nc.images.length === 0) return;
 
-function updateNosotrosImage(){
-  const img = document.getElementById('nosotros-carousel-img');
-  const indicators = document.getElementById('nosotros-carousel-indicators');
-  if(!img || nosotrosImages.length===0) return;
-  const item = nosotrosImages[nosotrosIndex % nosotrosImages.length];
-  img.src = item.url;
-  img.alt = item.alt || 'Imagen';
-  // update indicators
-  if(indicators){
-    Array.from(indicators.children).forEach((dot, i)=>{
-      dot.classList.toggle('bg-white', i===nosotrosIndex);
-      dot.classList.toggle('bg-white/50', i!==nosotrosIndex);
-    });
-  }
-}
+  const slidesEl = document.getElementById('nosotros-slides');
+  const dotsEl   = document.getElementById('nosotros-dots');
+  const prevBtn  = document.getElementById('nosotros-prev');
+  const nextBtn  = document.getElementById('nosotros-next');
+  const wrap     = document.getElementById('nosotros-carousel');
+  if(!slidesEl || !dotsEl) return;
 
-function prevNosotros(){
-  if(nosotrosImages.length===0) return;
-  nosotrosIndex = (nosotrosIndex - 1 + nosotrosImages.length) % nosotrosImages.length;
-  updateNosotrosImage();
-}
-
-function nextNosotros(){
-  if(nosotrosImages.length===0) return;
-  nosotrosIndex = (nosotrosIndex + 1) % nosotrosImages.length;
-  updateNosotrosImage();
-}
-
-function renderNosotrosIndicators(){
-  const indicators = document.getElementById('nosotros-carousel-indicators');
-  if(!indicators) return;
-  indicators.innerHTML = '';
-  nosotrosImages.forEach((img,i)=>{
-    const dot = document.createElement('div');
-    dot.className = 'w-2.5 h-2.5 rounded-full shadow-sm cursor-pointer ' + (i===nosotrosIndex ? 'bg-white' : 'bg-white/50');
-    dot.addEventListener('click', ()=>{ nosotrosIndex = i; updateNosotrosImage(); });
-    indicators.appendChild(dot);
+  // Build slides
+  _nc.images.forEach((img, i) => {
+    const slide = document.createElement('div');
+    slide.className = 'absolute inset-0 w-full h-full';
+    slide.style.cssText = `opacity:${i===0?'1':'0'};transition:opacity 0.5s ease;pointer-events:none;`;
+    slide.dataset.index = i;
+    const el = document.createElement('img');
+    el.src = img.url;
+    el.alt = img.alt || '';
+    el.className = 'w-full h-full object-cover';
+    if(i > 0) el.loading = 'lazy';
+    slide.appendChild(el);
+    // caption
+    if(img.alt){
+      const cap = document.createElement('div');
+      cap.className = 'absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent px-5 pt-8 pb-12 text-white text-sm font-medium';
+      cap.textContent = img.alt;
+      slide.appendChild(cap);
+    }
+    slidesEl.appendChild(slide);
   });
-}
+  // make first slide visible
+  if(slidesEl.firstElementChild) slidesEl.firstElementChild.style.opacity = '1';
 
-function startNosotrosAutoPlay(){
-  stopNosotrosAutoPlay();
-  nosotrosInterval = setInterval(()=>{ nextNosotros(); }, 5000);
-}
+  // Build dots
+  _nc.images.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = _dotClass(i === 0);
+    dot.setAttribute('aria-label', `Ir a imagen ${i+1}`);
+    dot.addEventListener('click', () => _ncGoto(i));
+    dotsEl.appendChild(dot);
+  });
 
-function stopNosotrosAutoPlay(){
-  if(nosotrosInterval){ clearInterval(nosotrosInterval); nosotrosInterval = null; }
-}
+  // Controls
+  if(prevBtn) prevBtn.addEventListener('click', () => _ncStep(-1));
+  if(nextBtn) nextBtn.addEventListener('click', () => _ncStep(1));
 
-async function initNosotrosCarousel(){
-  await fetchNosotrosImages();
-  if(nosotrosImages.length===0) return;
-  renderNosotrosIndicators();
-  updateNosotrosImage();
-
-  const prev = document.getElementById('nosotros-carousel-prev');
-  const next = document.getElementById('nosotros-carousel-next');
-  const container = document.getElementById('nosotros-carousel');
-  if(prev) prev.addEventListener('click', ()=>{ prevNosotros(); startNosotrosAutoPlay(); });
-  if(next) next.addEventListener('click', ()=>{ nextNosotros(); startNosotrosAutoPlay(); });
-  if(container){
-    container.addEventListener('mouseenter', stopNosotrosAutoPlay);
-    container.addEventListener('mouseleave', startNosotrosAutoPlay);
-    // Keyboard controls: left/right arrows
-    const keyHandler = (e)=>{
-      if(e.key === 'ArrowLeft'){
-        prevNosotros(); startNosotrosAutoPlay();
-      } else if(e.key === 'ArrowRight'){
-        nextNosotros(); startNosotrosAutoPlay();
-      }
-    };
-    document.addEventListener('keydown', keyHandler);
-
-    // Pointer-based swipe (mouse/touch)
-    let pointerDown = false;
-    let startX = 0;
-    const threshold = parseInt(container.dataset.swipeThreshold || '40', 10) || 40; // px to consider swipe
-    container.addEventListener('pointerdown', (ev)=>{
-      pointerDown = true;
-      startX = ev.clientX;
-      container.setPointerCapture(ev.pointerId);
-      stopNosotrosAutoPlay();
+  // Pause on hover + swipe (never capture pointer so buttons still fire)
+  if(wrap){
+    wrap.addEventListener('mouseenter', _ncStop);
+    wrap.addEventListener('mouseleave', _ncPlay);
+    // Swipe — skip if the down target is a button so clicks are not hijacked
+    let sx = 0, swiping = false;
+    wrap.addEventListener('pointerdown', ev => {
+      if(ev.target.closest('button')) return;
+      sx = ev.clientX;
+      swiping = true;
+      _ncStop();
     });
-    container.addEventListener('pointerup', (ev)=>{
-      if(!pointerDown) return;
-      pointerDown = false;
-      const dx = ev.clientX - startX;
-      if(Math.abs(dx) > threshold){
-        if(dx > 0) prevNosotros(); else nextNosotros();
-      }
-      startNosotrosAutoPlay();
+    wrap.addEventListener('pointerup', ev => {
+      if(!swiping) return;
+      swiping = false;
+      const dx = ev.clientX - sx;
+      if(Math.abs(dx) > 40) _ncStep(dx > 0 ? -1 : 1);
+      _ncPlay();
     });
-    container.addEventListener('pointercancel', ()=>{ pointerDown=false; startNosotrosAutoPlay(); });
+    wrap.addEventListener('pointercancel', () => { swiping = false; _ncPlay(); });
   }
-  startNosotrosAutoPlay();
+
+  // Keyboard
+  document.addEventListener('keydown', ev => {
+    if(ev.key==='ArrowLeft')  _ncStep(-1);
+    if(ev.key==='ArrowRight') _ncStep(1);
+  });
+
+  _ncPlay();
 }
 
+function _dotClass(active){
+  return `w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer ${active ? 'bg-white scale-110 shadow-md' : 'bg-white/50 hover:bg-white/80'}`;
+}
+
+function _ncGoto(idx){
+  if(_nc.transitioning || idx === _nc.current) return;
+  _nc.transitioning = true;
+  const slides = document.querySelectorAll('#nosotros-slides > div');
+  const dots   = document.querySelectorAll('#nosotros-dots > button');
+  if(dots[_nc.current]) dots[_nc.current].className = _dotClass(false);
+  if(slides[_nc.current]) slides[_nc.current].style.opacity = '0';
+  _nc.current = idx;
+  if(slides[_nc.current]) slides[_nc.current].style.opacity = '1';
+  if(dots[_nc.current]) dots[_nc.current].className = _dotClass(true);
+  // release lock after transition
+  setTimeout(() => { _nc.transitioning = false; }, 520);
+}
+
+function _ncStep(dir){
+  const n = _nc.images.length;
+  _ncGoto((_nc.current + dir + n) % n);
+}
+
+function _ncPlay(){
+  _ncStop();
+  _nc.timer = setInterval(() => _ncStep(1), 5000);
+}
+
+function _ncStop(){
+  if(_nc.timer){ clearInterval(_nc.timer); _nc.timer = null; }
+}

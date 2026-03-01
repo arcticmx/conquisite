@@ -2,32 +2,27 @@
   "images": [
     {
       "id": 1,
-      "url": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1600&auto=format&fit=crop",
+      "url": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop",
       "alt": "Fachada y área de recepción de centro médico moderno con iluminación cálida"
     },
     {
       "id": 2,
-      "url": "https://images.unsplash.com/photo-1581093458791-9d42cc8562c3?q=80&w=1600&auto=format&fit=crop",
-      "alt": "Equipo de resonancia magnética de 1.5 Tesla en sala de imagen diagnóstica"
-    },
-    {
-      "id": 3,
-      "url": "https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=1600&auto=format&fit=crop",
+      "url": "https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=800&auto=format&fit=crop",
       "alt": "Laboratorio clínico con analizador hematológico automatizado de última generación"
     },
     {
-      "id": 4,
-      "url": "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=1600&auto=format&fit=crop",
+      "id": 3,
+      "url": "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=800&auto=format&fit=crop",
       "alt": "Médico especialista consultando resultados con paciente en consultorio privado"
     },
     {
-      "id": 5,
-      "url": "https://images.unsplash.com/photo-1551601651-2a8555f1a136?q=80&w=1600&auto=format&fit=crop",
+      "id": 4,
+      "url": "https://images.unsplash.com/photo-1551601651-2a8555f1a136?q=80&w=800&auto=format&fit=crop",
       "alt": "Personal técnico de radiología calibrando tomógrafo computarizado multicorte"
     },
     {
-      "id": 6,
-      "url": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
+      "id": 5,
+      "url": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop",
       "alt": "Sala de cardiología con equipo de prueba de esfuerzo y monitoreo continuo"
     }
   ]

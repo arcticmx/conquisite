@@ -132,16 +132,31 @@ function renderGrid(){
   // render grid for md+
   if(grid){
     grid.innerHTML = '';
-    pageItems.forEach(s=>{
-      const card = createStudyCard(s, { extraClass: 'h-72' });
-      grid.appendChild(card);
-    });
+    if(pageItems.length === 0){
+      grid.innerHTML = `<div class="col-span-full flex flex-col items-center justify-center py-20 text-slate-400">
+        <span class="material-icons-outlined text-5xl mb-3">search_off</span>
+        <p class="text-lg font-medium">Sin elementos para mostrar</p>
+        <p class="text-sm mt-1">Intenta con otro filtro o término de búsqueda</p>
+      </div>`;
+    } else {
+      pageItems.forEach(s=>{
+        const card = createStudyCard(s, { extraClass: 'h-72' });
+        grid.appendChild(card);
+      });
+    }
   }
 
   // render accordion for mobile
   if(accordion){
     accordion.innerHTML = '';
-    pageItems.forEach(s=>{
+    if(pageItems.length === 0){
+      accordion.innerHTML = `<div class="flex flex-col items-center justify-center py-16 text-slate-400">
+        <span class="material-icons-outlined text-5xl mb-3">search_off</span>
+        <p class="text-base font-medium">Sin elementos para mostrar</p>
+        <p class="text-sm mt-1">Intenta con otro filtro o término de búsqueda</p>
+      </div>`;
+    } else {
+      pageItems.forEach(s=>{
       const item = document.createElement('div');
       item.className = 'bg-white dark:bg-slate-800 rounded-xl shadow-sm overflow-hidden border border-slate-100 dark:border-slate-700';
       const prepChip = (s.preparation && s.preparation.length)
@@ -206,6 +221,7 @@ function renderGrid(){
 
       accordion.appendChild(item);
     });
+    }
   }
 
   if(countEl) countEl.textContent = filtered.length;

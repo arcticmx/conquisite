@@ -17,10 +17,13 @@ function createStudyCard(s, { extraClass = '', linkText = 'Ver estudio' } = {}) 
     : '';
 
   card.innerHTML = `
+    <div class="absolute inset-0 bg-slate-200 animate-pulse"></div>
     <img
       alt="${s.title}"
       src="${s.image}"
+      loading="lazy"
       class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+      onload="this.previousElementSibling.style.display='none'"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
     <div class="absolute bottom-0 left-0 p-6 w-full">

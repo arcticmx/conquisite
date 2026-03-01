@@ -126,6 +126,10 @@ async function init(){
     }
     if(typeof initPackages === 'function') initPackages();
   }
+
+  // WhatsApp: boton hero
+  var btnHeroWA = document.getElementById('btn-hero-agendar');
+  if(btnHeroWA && window.WA){ btnHeroWA.addEventListener('click', function(){ window.WA.agendarGeneral(); }); }
 }
 
 function activateNavLinks(){

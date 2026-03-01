@@ -155,19 +155,11 @@
     const resEl = document.getElementById('pack-results');
     if (resEl) resEl.textContent = pkg.results ? `Resultados completos en ${pkg.results}` : 'Resultados: --';
 
-    // WhatsApp: cambiar por el número real (código_país + número, sin +)
-    var WHATSAPP_NUMBER = '5215512345678';
     const btnAgendar = document.getElementById('btn-agendar');
-    if (btnAgendar) {
+    if (btnAgendar && window.WA) {
       btnAgendar.addEventListener('click', () => {
-        const price = pkg.price ? `$${Number(pkg.price).toLocaleString('es-MX')} MXN` : '';
-        const lines = [
-          `Hola CONQUI, me gustaría agendar una cita para el siguiente paquete:`,
-          `📋 *${pkg.title || 'Paquete'}*${pkg.category ? ` (${pkg.category})` : ''}`,
-          price ? `💰 Precio: ${price}` : '',
-          `Por favor, ¿me pueden indicar disponibilidad y horarios?`
-        ].filter(Boolean).join('\n');
-        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines)}`, '_blank');
+        const priceStr = pkg.price ? `$${Number(pkg.price).toLocaleString('es-MX')} MXN` : '';
+        window.WA.agendarPaquete(pkg.title, pkg.category, priceStr);
       });
     }
 

@@ -36,10 +36,7 @@ async function init(){
   if(typeof window.setupMobileMenu === 'function') window.setupMobileMenu();
   if(typeof window.activateNavLinks === 'function') window.activateNavLinks();
 
-  // WhatsApp: cambiar por el número real (formato: código_país + número, sin +)
-  var WHATSAPP_NUMBER = '5215512345678';
-
-  // Form handling: construye mensaje y abre WhatsApp
+  // Form handling: construye mensaje y abre WhatsApp via WA.enviarFormulario()
   const form = document.getElementById('contact-form');
   const resultEl = document.getElementById('contact-form-result');
   if(form){
@@ -54,15 +51,7 @@ async function init(){
         if(resultEl) resultEl.innerHTML = '<span class="text-red-600 font-medium">Por favor completa los campos requeridos.</span>';
         return;
       }
-      const asuntoMap = { info:'Información General', citas:'Agendar Cita', resultados:'Resultados', quejas:'Sugerencias' };
-      const lines = [
-        `Hola CONQUI, me llamo *${nombre}*.`,
-        tel     ? `📞 Teléfono: ${tel}` : '',
-        `📧 Email: ${email}`,
-        asunto  ? `📋 Asunto: ${asuntoMap[asunto] || asunto}` : '',
-        `💬 ${mensaje}`
-      ].filter(Boolean).join('\n');
-      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines)}`, '_blank');
+      window.WA.enviarFormulario(nombre, email, tel, asunto, mensaje);
       if(resultEl) resultEl.innerHTML = '<span class="text-green-600 font-medium">Redirigiendo a WhatsApp ✔</span>';
       form.reset();
     });

@@ -154,6 +154,7 @@
 
     <div id="component-footer"></div>
 
+    <script src="../../assets/js/whatsapp.js"></script>
     <script src="../../assets/js/shell.js"></script>
     <script>
       // Populate study-detail from studies.json based on ?id=
@@ -183,18 +184,11 @@
           const dur = document.getElementById('study-duration'); if(dur) dur.textContent = s.duration ? s.duration : 'Duración: --';
           const resEl = document.getElementById('study-results'); if(resEl) resEl.textContent = s.results ? `Resultados: ${s.results}` : 'Resultados: --';
 
-          // WhatsApp: cambiar por el número real (código_país + número, sin +)
-          var WHATSAPP_NUMBER = '5215512345678';
           const btnAgendar = document.getElementById('btn-agendar');
-          if(btnAgendar){
+          if(btnAgendar && window.WA){
             btnAgendar.addEventListener('click', ()=>{
-              const lines = [
-                `Hola CONQUI, me gustaría agendar una cita para el siguiente estudio:`,
-                `📋 *${s.title || 'Estudio'}*${s.category ? ` (${s.category})` : ''}`,
-                s.price ? `💰 Precio: $${s.price.toLocaleString('es-MX')} MXN` : '',
-                `Por favor, ¿me pueden indicar disponibilidad y horarios?`
-              ].filter(Boolean).join('\n');
-              window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines)}`, '_blank');
+              const priceStr = s.price ? `$${s.price.toLocaleString('es-MX')} MXN` : '';
+              window.WA.agendarEstudio(s.title, s.category, priceStr);
             });
           }
         }catch(e){ console.warn(e); }

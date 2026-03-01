@@ -142,7 +142,10 @@
               </div>
             </div>
             <div class="pt-2">
-              <button class="w-full flex items-center justify-center rounded-lg h-12 bg-secondary hover:bg-red-600 text-white text-base font-bold transition-all shadow-md hover:shadow-lg transform active:scale-[0.98]">Agendar Cita Ahora</button>
+              <button id="btn-agendar" class="w-full flex items-center justify-center gap-2 rounded-lg h-12 bg-[#25D366] hover:bg-[#1ebe5d] text-white text-base font-bold transition-all shadow-md hover:shadow-lg transform active:scale-[0.98]">
+                <i class="fab fa-whatsapp text-xl"></i>
+                Agendar por WhatsApp
+              </button>
             </div>
           </div>
         </div>
@@ -179,6 +182,21 @@
           const price = document.getElementById('study-price'); if(price) price.textContent = s.price ? `$${s.price.toLocaleString('es-MX')}` : '$0';
           const dur = document.getElementById('study-duration'); if(dur) dur.textContent = s.duration ? s.duration : 'Duración: --';
           const resEl = document.getElementById('study-results'); if(resEl) resEl.textContent = s.results ? `Resultados: ${s.results}` : 'Resultados: --';
+
+          // WhatsApp: cambiar por el número real (código_país + número, sin +)
+          var WHATSAPP_NUMBER = '5215512345678';
+          const btnAgendar = document.getElementById('btn-agendar');
+          if(btnAgendar){
+            btnAgendar.addEventListener('click', ()=>{
+              const lines = [
+                `Hola CONQUI, me gustaría agendar una cita para el siguiente estudio:`,
+                `📋 *${s.title || 'Estudio'}*${s.category ? ` (${s.category})` : ''}`,
+                s.price ? `💰 Precio: $${s.price.toLocaleString('es-MX')} MXN` : '',
+                `Por favor, ¿me pueden indicar disponibilidad y horarios?`
+              ].filter(Boolean).join('\n');
+              window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines)}`, '_blank');
+            });
+          }
         }catch(e){ console.warn(e); }
       })();
     </script>

@@ -36,21 +36,34 @@ async function init(){
   if(typeof window.setupMobileMenu === 'function') window.setupMobileMenu();
   if(typeof window.activateNavLinks === 'function') window.activateNavLinks();
 
-  // Form handling: simple client-side validate + success message
+  // WhatsApp: cambiar por el número real (formato: código_país + número, sin +)
+  var WHATSAPP_NUMBER = '5215512345678';
+
+  // Form handling: construye mensaje y abre WhatsApp
   const form = document.getElementById('contact-form');
   const resultEl = document.getElementById('contact-form-result');
   if(form){
     form.addEventListener('submit', (e)=>{
       e.preventDefault();
-      const nombre = document.getElementById('nombre')?.value?.trim();
-      const email = document.getElementById('email')?.value?.trim();
+      const nombre  = document.getElementById('nombre')?.value?.trim();
+      const email   = document.getElementById('email')?.value?.trim();
       const mensaje = document.getElementById('mensaje')?.value?.trim();
+      const tel     = document.getElementById('telefono')?.value?.trim();
+      const asunto  = document.getElementById('asunto')?.value;
       if(!nombre || !email || !mensaje){
         if(resultEl) resultEl.innerHTML = '<span class="text-red-600 font-medium">Por favor completa los campos requeridos.</span>';
         return;
       }
-      // Simulate send
-      if(resultEl) resultEl.innerHTML = '<span class="text-green-600 font-medium">Mensaje enviado. Gracias, te contactaremos pronto.</span>';
+      const asuntoMap = { info:'Información General', citas:'Agendar Cita', resultados:'Resultados', quejas:'Sugerencias' };
+      const lines = [
+        `Hola CONQUI, me llamo *${nombre}*.`,
+        tel     ? `📞 Teléfono: ${tel}` : '',
+        `📧 Email: ${email}`,
+        asunto  ? `📋 Asunto: ${asuntoMap[asunto] || asunto}` : '',
+        `💬 ${mensaje}`
+      ].filter(Boolean).join('\n');
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines)}`, '_blank');
+      if(resultEl) resultEl.innerHTML = '<span class="text-green-600 font-medium">Redirigiendo a WhatsApp ✔</span>';
       form.reset();
     });
   }

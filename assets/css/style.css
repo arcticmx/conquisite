@@ -26,6 +26,9 @@
 /* Ensure images fit nicely inside cards when moved to components */
 img{max-width:100%;height:auto}
 
+/* Prevent horizontal scroll caused by off-screen mobile menu */
+html, body { overflow-x: hidden; }
+
 /* Smooth scrolling for in-page anchors */
 html{scroll-behavior:smooth}
 

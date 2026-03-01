@@ -1,6 +1,6 @@
 **CONQUI - Centro de Imagen (Proyecto)**
 
-- **Descripción:**: Sitio web corporativo sencillo y componentizado para un centro de imagen y diagnóstico. El proyecto está organizado como páginas estáticas que reutilizan fragmentos HTML (header/footer y secciones) y datos JSON para contenido dinámico (estudios, carrusel).
+- **Descripción:**: Sitio web corporativo sencillo y componentizado para un Conqui imagen y diagnóstico. El proyecto está organizado como páginas estáticas que reutilizan fragmentos HTML (header/footer y secciones) y datos JSON para contenido dinámico (estudios, carrusel).
 
 **Estructura principal**
 - `index.html` — página principal (carga componentes desde `components/`).

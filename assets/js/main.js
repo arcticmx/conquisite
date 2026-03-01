@@ -9,6 +9,14 @@ const components = [
   'footer'
 ];
 
+/** Resolve [data-href] links relative to the site root. root='' for index. */
+function rewriteNavHrefs(root) {
+  document.querySelectorAll('[data-href]').forEach(el => {
+    const dh = el.getAttribute('data-href');
+    el.setAttribute('href', dh === '' ? (root || './') : root + dh);
+  });
+}
+
 async function loadComponent(name){
   try{
     const res = await fetch(`components/${name}.html`);
@@ -24,7 +32,9 @@ async function loadComponent(name){
 async function init(){
   for(const c of components) await loadComponent(c);
 
-  // Ensure mobile menu is initialized even if header contains inline scripts (they don't execute when fetched)
+  // Rewrite data-href → real href now that header/footer are in the DOM
+  rewriteNavHrefs('');
+
   (function ensureMobileMenu(){
     try{
       const btn = document.getElementById('mobile-menu-btn');
@@ -119,20 +129,16 @@ async function init(){
 }
 
 function activateNavLinks(){
-  const path = location.pathname;
-  document.querySelectorAll('nav a[href]').forEach(a => {
-    const href = a.getAttribute('href') || '';
-    let active = false;
-    if (href === '/conqui/' || href === '/conqui/index.html') {
-      active = path === '/conqui/' || path === '/conqui/index.html';
-    } else if (href.length > 1) {
-      active = path.startsWith(href);
-    }
+  const currentPage = document.documentElement.dataset.page || '';
+  document.querySelectorAll('#desktop-nav-links a[data-page]').forEach(a => {
+    const page = a.getAttribute('data-page');
+    const active = page === currentPage;
     a.classList.toggle('text-secondary', active);
     a.classList.toggle('font-bold', active);
     if (active) a.setAttribute('aria-current', 'page');
     else a.removeAttribute('aria-current');
   });
 }
+window.activateNavLinks = activateNavLinks;
 
 document.addEventListener('DOMContentLoaded', init);

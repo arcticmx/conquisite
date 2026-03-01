@@ -19,7 +19,12 @@
   await loadTo('component-header', 'components/header.html');
   await loadTo('component-footer', 'components/footer.html');
 
-  // Dark mode sync
+  // Resolve data-href links now that header/footer are in the DOM
+  document.querySelectorAll('[data-href]').forEach(el => {
+    const dh = el.getAttribute('data-href');
+    el.setAttribute('href', dh === '' ? (base || './') : base + dh);
+  });
+
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     document.documentElement.classList.add('dark');
   }

@@ -32,7 +32,7 @@ function createPackCard(s, { extraClass = '', linkText = 'Ver paquete' } = {}) {
       <p class="text-slate-200 text-xs line-clamp-2 opacity-80 mb-2">${s.description || ''}</p>
       <div class="flex items-center gap-3">
         <a
-          href="/conqui/pages/pack/detail.html?id=${encodeURIComponent(s.id)}"
+          href="${(window.PACK_DETAIL_PATH||'pages/pack/detail.html')}?id=${encodeURIComponent(s.id)}"
           class="text-white text-sm font-bold flex items-center gap-1 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-75"
         >${linkText} <span class="material-icons-outlined text-sm">arrow_forward</span></a>
         ${price}
@@ -41,7 +41,7 @@ function createPackCard(s, { extraClass = '', linkText = 'Ver paquete' } = {}) {
   `;
 
   card.addEventListener('click', () => {
-    location.href = `/conqui/pages/pack/detail.html?id=${encodeURIComponent(s.id)}`;
+    location.href = `${window.PACK_DETAIL_PATH||'pages/pack/detail.html'}?id=${encodeURIComponent(s.id)}`;
   });
 
   return card;

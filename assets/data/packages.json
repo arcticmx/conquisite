@@ -132,6 +132,141 @@
         { "name": "Sucursal Sur", "address": "Periférico Sur 4500, CDMX", "availability": "Disponible mañana", "available": true },
         { "name": "Sucursal Norte", "address": "Insurgentes Norte 1200, CDMX", "availability": "Disponible esta semana", "available": false }
       ]
+    },
+    {
+      "id": 5,
+      "title": "Paquete Oncológico Preventivo",
+      "category": "Paquete Especializado",
+      "description": "Panel de tamizaje oncológico multiorgánico que combina marcadores tumorales séricos de alta especificidad con ultrasonido abdominal y pélvico para detección precoz.",
+      "image": "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=1200&auto=format&fit=crop",
+      "prep": "Ayuno 8 horas",
+      "price": 3950,
+      "regular_price": 5100,
+      "savings_label": "Ahorras $1,150 MXN",
+      "duration": "2.5 horas aprox.",
+      "results": "48–72 horas",
+      "full_description": "El Paquete Oncológico Preventivo está diseñado para personas con antecedentes familiares de cáncer o mayores de 45 años que buscan un tamizaje multiorgánico en una sola visita. Combina la determinación sérica de los marcadores tumorales más relevantes por órgano —determinados por inmunoensayo ECLIA de alta sensibilidad— con ultrasonido abdominal completo y pélvico para correlacionar hallazgos bioquímicos con morfología. Los marcadores incluyen PSA (próstata), CEA (colon, pulmón), CA-125 (ovario), AFP (hígado), CA 19-9 (páncreas) y CA 15-3 (mama), todos en una sola extracción de sangre.",
+      "includes": [
+        { "icon": "science", "title": "PSA Total y Libre", "description": "Tamizaje de patología prostática benigna y maligna. Incluye índice PSA libre/total." },
+        { "icon": "labs", "title": "CEA (Antígeno Carcinoembrionario)", "description": "Marcador de seguimiento en cáncer colorrectal, pulmón, estómago y mama." },
+        { "icon": "labs", "title": "CA-125 (Cáncer de Ovario)", "description": "Marcador de referencia para seguimiento de tumores epiteliales ováricos." },
+        { "icon": "science", "title": "AFP (Alfafetoproteína) y CA 19-9", "description": "AFP para hepatocarcinoma y tumores germinales; CA 19-9 para páncreas y vías biliares." },
+        { "icon": "monitor_heart", "title": "Ultrasonido Abdominal Completo", "description": "Evaluación ecográfica de hígado, vesícula, vías biliares, páncreas, bazo y riñones." },
+        { "icon": "hematology", "title": "Biometría Hemática + Química 12 elementos", "description": "Panel de laboratorio base para interpretación oncológica integral." }
+      ],
+      "benefits": "Los marcadores tumorales son herramientas de tamizaje y seguimiento que, combinados con imagen, aumentan significativamente su valor predictivo. Este paquete permite a su médico tener un mapa multisistémico completo en una sola jornada para orientar estudios confirmatorios si se detecta alguna alteración.",
+      "benefits_tip": "Detección Temprana: El cáncer detectado en etapa I tiene tasas de supervivencia a 5 años superiores al 90% en la mayoría de tipos. El tamizaje preventivo anual es la intervención con mayor impacto en mortalidad oncológica.",
+      "preparation": [
+        { "icon": "restaurant_menu", "title": "Ayuno de 8 Horas", "description": "Obligatorio para laboratorio y ultrasonido abdominal. Solo agua simple permitida." },
+        { "icon": "sports", "title": "Restricción para PSA", "description": "Abstinencia sexual y evitar ciclismo, equitación o actividad física intensa las 72 horas previas al estudio para no elevar artificialmente el PSA." },
+        { "icon": "checkroom", "title": "Ropa de Dos Piezas", "description": "Facilita el acceso para el ultrasonido sin necesidad de desvestirse completamente. Evitar cintos con hebilla metálica." },
+        { "icon": "medication", "title": "Tratamientos Oncológicos Activos", "description": "Si está en quimioterapia o radioterapia, infórmelo al momento de registrarse: los rangos de referencia se interpretan de forma diferente." }
+      ],
+      "locations": [
+        { "name": "Sucursal Central", "address": "Av. Reforma 222, Col. Juárez, CDMX", "availability": "Citas hoy disponibles", "available": true },
+        { "name": "Sucursal Norte", "address": "Insurgentes Norte 1200, Col. Lindavista, CDMX", "availability": "Disponible esta semana", "available": true }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Paquete Prenatal Primer Trimestre",
+      "category": "Paquete Ginecológico",
+      "description": "Protocolo integral de laboratorio e imagen para el control prenatal del primer trimestre, con cribado de anomalías cromosómicas, infecciones del TORCH y evaluación fetal.",
+      "image": "https://images.unsplash.com/photo-1609220136736-443140cffec6?q=80&w=1200&auto=format&fit=crop",
+      "prep": "Sin ayuno (salvo laboratorio)",
+      "price": 3100,
+      "regular_price": 3900,
+      "savings_label": "Ahorras $800 MXN",
+      "duration": "2 horas aprox.",
+      "results": "48–72 horas",
+      "full_description": "El Paquete Prenatal Primer Trimestre consolida en una sola visita todos los estudios recomendados por la NOM-007-SSA para el control del primer trimestre del embarazo (semanas 8–14). Incluye el cribado combinado de aneuploidías (translucencia nucal + PAPP-A + β-HCG libre, con cálculo de riesgo para Trisomía 21, 18 y 13), panel de infecciones TORCH (Toxoplasma, Rubeola, CMV, Herpes), grupo sanguíneo, Coombs indirecto, glucosa de ayuno, urocultivo y ultrasonido obstétrico detallado de primer trimestre.",
+      "includes": [
+        { "icon": "science", "title": "Cribado Bioquímico 1er Trimestre (PAPP-A + β-HCG libre)", "description": "Marcadores séricos para cálculo de riesgo de aneuploidías fetales (T21, T18, T13)." },
+        { "icon": "labs", "title": "Panel TORCH Completo (IgG + IgM)", "description": "Toxoplasma, Rubeola, Citomegalovirus, Herpes simplex I/II y Parvovirus B19." },
+        { "icon": "hematology", "title": "Biometría Hemática + Grupo y Rh + Coombs Indirecto", "description": "Detección de anemia gestacional, incompatibilidad ABO/Rh y aloinmunización." },
+        { "icon": "science", "title": "Glucosa en Ayuno + Urocultivo", "description": "Tamizaje de diabetes gestacional temprana e infección urinaria asintomática." },
+        { "icon": "monitor_heart", "title": "Ultrasonido Obstétrico 11–14 semanas", "description": "Medición de translucencia nucal, LCR, hueso nasal y frecuencia cardíaca fetal. Confirmación de edad gestacional." },
+        { "icon": "labs", "title": "TSH + Ferritina Sérica", "description": "Hipotiroidismo subclínico gestacional y reservas de hierro para prevención de anemia." }
+      ],
+      "benefits": "El primer trimestre es la ventana más importante para la detección de anomalías cromosómicas y la prevención de complicaciones maternas y fetales. Este paquete cumple con los estándares de la ACOG, la FIGO y la NOM-007 mexicana, y reduce la necesidad de múltiples visitas en etapas tempranas del embarazo.",
+      "benefits_tip": "Cribado Seguro: El cribado combinado del primer trimestre (bioquímica + ecografía) alcanza una tasa de detección de Síndrome de Down del 90% con solo un 5% de falsos positivos, sin riesgo para el embarazo.",
+      "preparation": [
+        { "icon": "restaurant_menu", "title": "Ayuno Parcial", "description": "Para los estudios de laboratorio (glucosa, urocultivo) se requiere ayuno de 8 horas. La ecografía no requiere ayuno en este trimestre." },
+        { "icon": "water_drop", "title": "Vejiga con Llenado Moderado", "description": "Beber 500 ml de agua 45 minutos antes del ultrasonido y no orinar. Después de la ecografía se puede vaciar para el urocultivo." },
+        { "icon": "calendar_month", "title": "Semana Óptima", "description": "El ultrasonido de translucencia nucal debe realizarse entre la semana 11+0 y 13+6 de gestación para máxima sensibilidad diagnóstica." },
+        { "icon": "checkroom", "title": "Documentación", "description": "Traer cartilla de vacunación, resultados de laboratorios previos y fecha de última menstruación o ultrasonido previo si lo tiene." }
+      ],
+      "locations": [
+        { "name": "Sucursal Central", "address": "Av. Reforma 222, Col. Juárez, CDMX", "availability": "Citas hoy disponibles", "available": true },
+        { "name": "Sucursal Sur", "address": "Periférico Sur 4500, Col. Jardines del Pedregal, CDMX", "availability": "Disponible mañana", "available": true }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Paquete Neurológico Diagnóstico",
+      "category": "Paquete Especializado",
+      "description": "Evaluación multimodal del sistema nervioso central que combina RM cerebral con espectroscopia, EEG digital y laboratorio neurológico para diagnóstico de cefaleas, epilepsia y deterioro cognitivo.",
+      "image": "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?q=80&w=1200&auto=format&fit=crop",
+      "prep": "Sin ayuno",
+      "price": 5800,
+      "regular_price": 7400,
+      "savings_label": "Ahorras $1,600 MXN",
+      "duration": "3 horas aprox.",
+      "results": "48–72 horas",
+      "full_description": "El Paquete Neurológico Diagnóstico está diseñado para pacientes con cefaleas recurrentes, episodios de pérdida de consciencia, deterioro cognitivo progresivo, mareos de origen central o epilepsia de difícil control. Integra RM cerebral multiparamétrica con secuencias avanzadas (DWI, FLAIR, T2*), electroencefalograma digital de 32 canales con video-EEG y un panel de laboratorio neurológico que incluye vitamina B12, folato, TSH, anticuerpos antitiroideos, homocisteína y VDRL. La combinación de imagen funcional y trazado eléctrico cerebral permite una caracterización diagnóstica que ningún estudio aislado puede ofrecer.",
+      "includes": [
+        { "icon": "neurology", "title": "RM Cerebral Multiparamétrica con Gadolinio", "description": "Secuencias T1, T2, FLAIR, DWI, T2*, angioRM y T1 post-contraste. Gold standard para lesiones cerebrales." },
+        { "icon": "ecg_heart", "title": "Electroencefalograma Digital 32 Canales (Video-EEG)", "description": "Registro eléctrico cerebral de 30 minutos con activación (hiperventilación + fotoestimulación) para diagnóstico de epilepsia y encefalopatías." },
+        { "icon": "labs", "title": "Panel Neurológico Sérico Completo", "description": "Vitamina B12, folato, homocisteína, TSH, T4 libre, anticuerpos anti-TPO y perfil de autoanticuerpos." },
+        { "icon": "science", "title": "VDRL + VIH (prueba rápida)", "description": "Tamizaje de causas infecciosas reversibles de deterioro cognitivo según guías AAN." },
+        { "icon": "hematology", "title": "Biometría Hemática + PCR ultrasensible + VSG", "description": "Marcadores inflamatorios sistémicos con impacto en patología neurológica (vasculitis, encefalitis)." },
+        { "icon": "monitor_heart", "title": "Doppler de Vasos del Cuello (Carotídeo y Vertebral)", "description": "Evaluación ecográfica del flujo carotídeo y vertebrobasilar para detección de estenosis o placas." }
+      ],
+      "benefits": "El diagnóstico neurológico tardío es una de las causas más frecuentes de discapacidad prevenible. Este paquete comprime semanas de estudios fragmentados en una sola jornada clínica, con integración multidisciplinaria de neuroimagen, neurofisiología y laboratorio para llegar a un diagnóstico diferencial preciso y orientado.",
+      "benefits_tip": "Diagnóstico Preciso: El 40% de los pacientes con epilepsia de nuevo diagnóstico tienen un EEG normal en el primer registro. Combinarlo con RM cerebral eleva la certeza diagnóstica al 78% y evita años de tratamiento empírico innecesario.",
+      "preparation": [
+        { "icon": "restaurant_menu", "title": "Sin Ayuno Requerido", "description": "Este paquete no requiere ayuno. Puede desayunar normalmente, evitando exceso de café o estimulantes." },
+        { "icon": "medication", "title": "Antiepilépticos y Psicofármacos", "description": "NO suspender medicación antiepiléptica sin indicación del neurólogo responsable. Informar todos los fármacos al momento del registro." },
+        { "icon": "checkroom", "title": "Cabello Limpio y Sin Productos", "description": "Para el EEG, acudir con cabello limpio, seco y sin gel, laca, aceite ni tintes recientes. Esta es la preparación más importante del paquete." },
+        { "icon": "radiology", "title": "Implantes y Contraindicaciones para RM", "description": "Declarar marcapasos, stents cerebrales, clips de aneurisma o cualquier implante metálico. Estas condiciones pueden excluir la RM con gadolinio." }
+      ],
+      "locations": [
+        { "name": "Sucursal Central", "address": "Av. Reforma 222, Col. Juárez, CDMX", "availability": "Citas disponibles esta semana", "available": true }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Check-up Ejecutivo Plus",
+      "category": "Paquete Preventivo",
+      "description": "Programa de evaluación preventiva premium para profesionales activos. Más de 60 parámetros en 90 minutos: laboratorio completo, imagen, cardiología y entrega de resultados con asesoría médica personalizada.",
+      "image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1200&auto=format&fit=crop",
+      "prep": "Ayuno 8–10 horas",
+      "price": 5500,
+      "regular_price": 7200,
+      "savings_label": "Ahorras $1,700 MXN",
+      "duration": "90 minutos aprox.",
+      "results": "24 horas (entrega comentada)",
+      "full_description": "El Check-up Ejecutivo Plus es nuestro programa preventivo más completo y eficiente. Diseñado para directivos, profesionistas y personas que valoran su tiempo sin renunciar a la profundidad diagnóstica, agrupa más de 60 parámetros en una sola visita de 90 minutos. El protocolo está validado por nuestro comité médico y se alinea con las recomendaciones de la US Preventive Services Task Force (USPSTF) y la Sociedad Española de Medicina Interna para chequeos ejecutivos. Incluye entrevista médica de 20 minutos con internista certificado para entrega comentada de resultados al día siguiente.",
+      "includes": [
+        { "icon": "science", "title": "Laboratorio Completo 60+ Parámetros", "description": "BHC, química 27 elementos, HbA1c, perfil lipídico completo, función tiroidea (TSH + T4L), marcadores hepáticos y vitamina D sérica." },
+        { "icon": "radiology", "title": "Radiografía de Tórax PA y Lateral", "description": "Evaluación de parénquima pulmonar, silueta cardíaca, mediastino y estructuras óseas torácicas." },
+        { "icon": "ecg_heart", "title": "Electrocardiograma de 12 Derivaciones", "description": "Registro eléctrico cardíaco en reposo con interpretación por cardiólogo." },
+        { "icon": "monitor_heart", "title": "Ultrasonido Abdominal + Doppler Renal", "description": "Evaluación completa de órganos sólidos abdominales e índices de resistencia de arterias renales." },
+        { "icon": "hematology", "title": "Evaluación Antropométrica y Presión Arterial", "description": "Peso, talla, IMC, cintura abdominal, grasa corporal (bioimpedancia) y toma seriada de presión arterial." },
+        { "icon": "medical_services", "title": "Entrevista Médica + Entrega Comentada de Resultados", "description": "Sesión de 20 minutos con médico internista certificado para revisión personalizada de todos los resultados y plan de acción." }
+      ],
+      "benefits": "El Check-up Ejecutivo Plus suprime el principal obstáculo de la medicina preventiva: el tiempo. Al concentrar evaluación de laboratorio, imagen, cardiología y consulta médica en 90 minutos, elimina la fragmentación del sistema y permite recibir un plan de salud completo y coherente en menos de 24 horas.",
+      "benefits_tip": "Retorno de Inversión en Salud: Estudios publicados en el Journal of Occupational Health demuestran que cada peso invertido en salud preventiva ejecutiva genera un ahorro de hasta $6 pesos en costos médicos curativos y ausentismo laboral.",
+      "preparation": [
+        { "icon": "restaurant_menu", "title": "Ayuno de 8 a 10 Horas", "description": "Fundamental para glucosa, triglicéridos y perfil lipídico. Puede beber agua o tomar medicamentos habituales con un pequeño trago." },
+        { "icon": "checkroom", "title": "Ropa Sin Herrajes y Dos Piezas", "description": "Facilita el acceso para ECG, ultrasonido y bioimpedancia. Retirar reloj, cinturón y joyas antes de la cita." },
+        { "icon": "calendar_month", "title": "Reservar 90 Minutos", "description": "El programa está cronometrado para cumplirse en 90 minutos. Se recomienda cita en horario matutino de lunes a viernes para aprovechar el ayuno nocturno." },
+        { "icon": "description", "title": "Historial Médico y Medicamentos", "description": "Traer lista de medicamentos actuales, estudios previos relevantes (últimos 2 años) y nombre de su médico de cabecera para la entrevista de cierre." }
+      ],
+      "locations": [
+        { "name": "Sucursal Central", "address": "Av. Reforma 222, Col. Juárez, CDMX", "availability": "Citas hoy disponibles", "available": true },
+        { "name": "Sucursal Norte", "address": "Insurgentes Norte 1200, Col. Lindavista, CDMX", "availability": "Disponible esta semana", "available": true }
+      ]
     }
   ]
 }

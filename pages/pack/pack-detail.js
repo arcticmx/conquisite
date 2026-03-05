@@ -43,8 +43,24 @@
     const pkg = (json.packages || []).find((x) => String(x.id) === String(id));
     if (!pkg) return;
 
-    // ── Actualizar <title> ───────────────────────────────────────────────
-    document.title = `CONQUI - ${pkg.title}`;
+    // ── Actualizar <title>, meta description y Open Graph ────────────────
+    const pageTitle = `${pkg.title} · CONQUI Imagen y Diagnóstico`;
+    const pageDesc  = pkg.description || 'Consulta los detalles, precio y preparación de este paquete en CONQUI.';
+    document.title = pageTitle;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', pageDesc);
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute('content', pageTitle);
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) ogDesc.setAttribute('content', pageDesc);
+    const twTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twTitle) twTitle.setAttribute('content', pageTitle);
+    if (pkg.image) {
+      const ogImg = document.querySelector('meta[property="og:image"]');
+      if (ogImg) ogImg.setAttribute('content', pkg.image);
+      const twImg = document.querySelector('meta[name="twitter:image"]');
+      if (twImg) twImg.setAttribute('content', pkg.image);
+    }
 
     // ── Sección Hero ─────────────────────────────────────────────────────
     const img = document.getElementById('pack-image');

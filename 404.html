@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="es" data-root="" data-page="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 — Página no encontrada · CONQUI</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Página no encontrada. Vuelve al inicio de CONQUI Imagen y Diagnóstico." />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1e3a8a",
+              secondary: "#ef4444",
+              "background-light": "#f8fafc",
+              "background-dark": "#0f172a",
+              "surface-light": "#ffffff",
+              "surface-dark": "#1e293b",
+            },
+            fontFamily: { sans: ["Roboto", "sans-serif"] },
+            borderRadius: { DEFAULT: "0.5rem", xl: "1rem", "2xl": "1.5rem" },
+          },
+        },
+      };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+
+      /* Floating animation for the icon */
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50%       { transform: translateY(-14px); }
+      }
+      .animate-float { animation: float 3.5s ease-in-out infinite; }
+
+      /* Pulse ring around icon */
+      @keyframes ring-pulse {
+        0%   { transform: scale(1);   opacity: .45; }
+        100% { transform: scale(1.6); opacity: 0;   }
+      }
+      .ring-pulse::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 9999px;
+        border: 2px solid #1e3a8a;
+        animation: ring-pulse 2s ease-out infinite;
+      }
+
+      /* Gradient text */
+      .gradient-text {
+        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+    </style>
+  </head>
+  <body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 font-sans antialiased min-h-screen flex flex-col">
+
+    <div id="component-header"></div>
+
+    <!-- ── 404 Content ── -->
+    <main class="flex-grow flex items-center justify-center hero-pattern py-20 px-4">
+      <div class="text-center max-w-lg mx-auto">
+
+        <!-- Icon with floating animation -->
+        <div class="flex justify-center mb-10">
+          <div class="relative ring-pulse">
+            <div class="w-28 h-28 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center animate-float shadow-xl shadow-primary/10">
+              <span class="material-symbols-outlined text-primary dark:text-blue-400" style="font-size:3.5rem; font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 48;">
+                search_off
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 404 number -->
+        <p class="text-8xl font-bold gradient-text leading-none mb-4 tracking-tight select-none">404</p>
+
+        <!-- Headline -->
+        <h1 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-3">
+          Página no encontrada
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-slate-500 dark:text-slate-400 text-base leading-relaxed mb-10">
+          La página que buscas no existe o fue movida.<br class="hidden sm:block" />
+          Pero podemos llevarte a donde necesitas.
+        </p>
+
+        <!-- Action buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a id="btn-home" href=""
+             class="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold px-8 py-3.5 rounded-full shadow-lg shadow-primary/25 transition-all hover:-translate-y-0.5 active:scale-[0.98]">
+            <span class="material-icons-outlined text-xl">home</span>
+            Ir al Inicio
+          </a>
+          <a id="btn-contact" href=""
+             class="inline-flex items-center gap-2 border-2 border-slate-200 dark:border-slate-700 hover:border-primary dark:hover:border-blue-400 text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-blue-400 font-bold px-8 py-3.5 rounded-full transition-all hover:-translate-y-0.5 active:scale-[0.98]">
+            <span class="material-icons-outlined text-xl">support_agent</span>
+            Contactar
+          </a>
+        </div>
+
+        <!-- Quick links -->
+        <div class="mt-14">
+          <p class="text-xs uppercase tracking-widest text-slate-400 dark:text-slate-500 font-semibold mb-5">
+            O visita alguna de estas secciones
+          </p>
+          <div class="flex flex-wrap justify-center gap-3">
+            <a id="link-studies" href=""
+               class="inline-flex items-center gap-1.5 bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 hover:border-primary/40 dark:hover:border-blue-500/40 text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-blue-400 text-sm font-medium px-4 py-2 rounded-full shadow-sm transition-all hover:-translate-y-0.5">
+              <span class="material-icons-outlined text-base">biotech</span>
+              Estudios
+            </a>
+            <a id="link-pack" href=""
+               class="inline-flex items-center gap-1.5 bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 hover:border-primary/40 dark:hover:border-blue-500/40 text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-blue-400 text-sm font-medium px-4 py-2 rounded-full shadow-sm transition-all hover:-translate-y-0.5">
+              <span class="material-icons-outlined text-base">inventory_2</span>
+              Paquetes
+            </a>
+            <a id="link-about" href=""
+               class="inline-flex items-center gap-1.5 bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 hover:border-primary/40 dark:hover:border-blue-500/40 text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-blue-400 text-sm font-medium px-4 py-2 rounded-full shadow-sm transition-all hover:-translate-y-0.5">
+              <span class="material-icons-outlined text-base">groups</span>
+              Nosotros
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </main>
+    <!-- ── /404 Content ── -->
+
+    <div id="component-footer"></div>
+
+    <script src="assets/js/whatsapp.js"></script>
+    <script src="assets/js/nav.js"></script>
+    <script>
+      (async function () {
+        async function loadTo(id, path) {
+          try {
+            const r = await fetch(path);
+            if (!r.ok) throw new Error(path);
+            document.getElementById(id).innerHTML = await r.text();
+          } catch (e) { console.warn(e); }
+        }
+
+        await loadTo('component-header', 'components/header.html');
+        await loadTo('component-footer', 'components/footer.html');
+
+        // Resolve internal links
+        const root = '';
+        document.querySelectorAll('[data-href]').forEach(el => {
+          const dh = el.getAttribute('data-href');
+          el.setAttribute('href', dh === '' ? (root || './') : root + dh);
+        });
+
+        // Wire quick links
+        document.getElementById('btn-home').href     = './';
+        document.getElementById('btn-contact').href  = 'pages/contact/';
+        document.getElementById('link-studies').href = 'pages/studies/';
+        document.getElementById('link-pack').href    = 'pages/pack/';
+        document.getElementById('link-about').href   = 'pages/about/';
+
+        if (typeof window.setupMobileMenu  === 'function') window.setupMobileMenu();
+        if (typeof window.activateNavLinks === 'function') window.activateNavLinks();
+      })();
+    </script>
+  </body>
+</html>

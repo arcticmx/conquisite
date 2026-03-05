@@ -3,7 +3,20 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CONQUI - Detalle de Estudio</title>
+    <title>Estudios · CONQUI Imagen y Diagnóstico</title>
+    <meta name="description" content="Consulta los detalles, precio y preparación de nuestros estudios de laboratorio e imagen en CONQUI." />
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+    <!-- Open Graph (actualizado dinámicamente por el script inline) -->
+    <meta property="og:type"        content="website" />
+    <meta property="og:site_name"   content="CONQUI Imagen y Diagnóstico" />
+    <meta property="og:locale"      content="es_MX" />
+    <meta property="og:title"       content="Estudios · CONQUI Imagen y Diagnóstico" />
+    <meta property="og:description" content="Consulta los detalles, precio y preparación de nuestros estudios de laboratorio e imagen." />
+    <meta property="og:image"       content="https://conqui.com.mx/assets/img/og-image.jpg" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card"  content="summary_large_image" />
+    <meta name="twitter:title" content="Estudios · CONQUI Imagen y Diagnóstico" />
+    <meta name="twitter:image" content="https://conqui.com.mx/assets/img/og-image.jpg" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
     <script id="tailwind-config">
       tailwind.config = {
@@ -170,6 +183,24 @@
           const s = (json.studies || []).find(x=> String(x.id) === String(id));
           if(!s) return;
           // fill elements
+          // ── Actualizar <title>, meta description y Open Graph ─────────
+          const pageTitle = `${s.title || 'Estudio'} · CONQUI Imagen y Diagnóstico`;
+          const pageDesc  = s.description || 'Consulta detalles, precio y preparación de este estudio en CONQUI.';
+          document.title = pageTitle;
+          const metaDesc = document.querySelector('meta[name="description"]');
+          if (metaDesc) metaDesc.setAttribute('content', pageDesc);
+          const ogTitle = document.querySelector('meta[property="og:title"]');
+          if (ogTitle) ogTitle.setAttribute('content', pageTitle);
+          const ogDesc  = document.querySelector('meta[property="og:description"]');
+          if (ogDesc)  ogDesc.setAttribute('content', pageDesc);
+          const twTitle = document.querySelector('meta[name="twitter:title"]');
+          if (twTitle) twTitle.setAttribute('content', pageTitle);
+          if (s.image) {
+            const ogImg = document.querySelector('meta[property="og:image"]');
+            if (ogImg) ogImg.setAttribute('content', s.image);
+            const twImg = document.querySelector('meta[name="twitter:image"]');
+            if (twImg) twImg.setAttribute('content', s.image);
+          }
           const img = document.getElementById('study-image'); if(img && s.image) img.src = s.image;
           const bc = document.getElementById('study-breadcrumb'); if(bc) bc.textContent = s.title || 'Detalle';
           const cat = document.getElementById('study-category'); if(cat) cat.textContent = s.category || '';
